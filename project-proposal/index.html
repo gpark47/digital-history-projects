@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Title Here | by Your Name</title>
+        <meta charset="UTF-8"> 
+        <meta name="description" content="a project proposal." />
+        <!-- these script tags load important javascript "libraries"
+             that our own little scripts depend on.  These are complex
+             programs way beyond our capacities to construct; but we can
+             make use of them nonetheless -->
+        <!-- jQuery is an important framework used by many web projects  -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+        <!-- markdown-it is our markdown parser, which translates markdown into HTML -->
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it@8.4.2/dist/markdown-it.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it-attrs@2.3.2/markdown-it-attrs.browser.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it-footnote@3.0.1/dist/markdown-it-footnote.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it-emoji@1.4.0/dist/markdown-it-emoji.js"></script>
+
+        <!-- in case you want to load the google map API -->
+        <!-- consider adding your own API key if you want to keep using this -->
+        <!-- https://developers.google.com/maps/documentation/javascript/get-api-key -->
+        <!-- my key will *only* work on github.io and your local computer  -->
+        <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJxAlu3l5sKbilIJst2_0RFF7ATv0jTuA"></script> -->
+
+        <!-- call all our CSS files: chota, site-wide mods, and page-specific mods -->
+        
+        <link rel="stylesheet" href="../css/chota.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="../css/site-styles.css" type="text/css" media="screen" />
+        <!-- THIS FILE DOES NOT EXIST YET! -->
+        <link rel="stylesheet" href="../css/proposal-styles.css" type="text/css" media="screen" />
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    </head>
+
+    <!-- note the 'onload' attribute here.
+         it calls the function "initialize" (defined below)
+         when the body has finished loading.  That's because the
+         Javascript will not run properly unless it
+         waits for the elements inside the body to load.  Therefore
+         we don't run the most important parts of the code until the page has finished loading.
+    -->
+    <body onload="initializePage();">
+
+        <header id="page-header" class="nav">
+            <a class="navbar-brand pull-right" href="#">Title Here | by Your Name</a> <!-- title should be descriptive -->
+            <!-- menu content is set in ../js/static-parts.js and appended here -->
+        </header>
+
+        <main class="main-container">
+            <section id="intro"></section>
+            <!-- will be filled with markdown from index.md -->
+            <section id="maintext"></section>
+        </main>
+
+        <!-- footer content is set in ../js/static-parts.js -->
+        <footer id="page-footer">
+            
+        </footer> 
+        
+        <!-- this line calls your custom js -->
+        <script src="../js/maps-setup.js"></script>
+        <script>
+         // we define the main actions of the script as a function which wil lbe run when the
+         // page resources have been completely loaded.
+         //window.
+         const initializePage = function() {
+             // instantiate the parser object and declare the
+             // placeholder variable for the rendered content
+             // while storing the original content so as not to lose it
+             let md = window.markdownit('commonmark', {
+                 html: true,
+                 linkify: true}),
+                 renderedcontent = "",
+                 introContent = $("#intro").html(),
+                 mainContent = $("#maintext").html();
+
+             /* use footnote, attribute and emoji plugins */
+             md.use(window.markdownItAttrs)
+             md.use(window.markdownitFootnote)
+             md.use(window.markdownitEmoji);
+             /* enable tables */
+             md.enable('table')
+
+             //retrieve the markdown files, parse them,
+             // and use it to replace the contents of #intro and #maintext
+
+             $.get("./intro.md", function (response) {
+                 let content = response,
+                     renderedcontent = md.render(content);
+                 console.log(typeof(response));
+                 $("#intro").html(introContent + renderedcontent);
+                 $.get("./index.md", function (response2) {
+                     let content = response2,
+                         renderedcontent2 = md.render(content);
+                     $("#maintext").html(mainContent + renderedcontent2);
+                 }, 'text')
+             }, 'text');
+         };
+        </script>
+        
+        <!-- generate header and footer using simple site-wide script -->
+        <script src="../js/static-parts.js"></script>
+
+    </body>
+
+</html>
+        <meta name="description" content="a project proposal" />
