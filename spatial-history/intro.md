@@ -1,6 +1,8 @@
 <section id="test">
 
-# This Map Should Deal with a Historical Topic You Care About 
+# The Spatiality of Hiroshima Peace Park and Nagasaki Peace Park
+
+This project will explore how the spatiality of each memorial impacts how the atomic bombings of Hiroshima and Nagasaki are remembered. 
 
 Your first task will be to locate some real places.  You can get the precise locations at various services, e.g [latlong.net](http://www.latlong.net/).
 

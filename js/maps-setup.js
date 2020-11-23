@@ -25,8 +25,8 @@
 
 // map initialization variables
 let projectMap, // this will hold the map once it's initialized
-    myCenter = [ 52.90024141178471, -1.2631566904279536 ], // [ 55.4907, -1.594], // *latitude*, then longitude
-    myZoom = 6; // set your preferred zoom here. higher number is closer in.
+    myCenter =  [ 33.10939131944678, 131.50954309381356 ], // [ 55.4907, -1.594], // *latitude*, then longitude
+    myZoom = 7; // set your preferred zoom here. higher number is closer in.
                 // I set the zoom wide to give access to context before zooming in
 
 
@@ -89,26 +89,29 @@ let gryfCol = 'yellow',
 // These are placeholder arrays; we use them to generate other JS variables
 // that will be more useful to us later on
 // but writing them this way keeps the code as D.R.Y. as possible
-let slythMarkerInfo =
+let hiroshimapeacepark =
     [
-        {position: [55.48997247517858,-1.5944015979766843],
-         title: "Room of Requirement",
-         description: '<p>one half of the Cabinet is located here.</p>'
+        {position: [ 34.39292585118296, 132.45255337927574 ],
+         title: "Cenotaph for the A-bomb Victims",
+         description: '<p>The inscription reads: .</p>'
         },
-        {position: [55.49058639152367,-1.5940092937469482],
-         title: "Fenrir Greyback",
-         description: `<p>An evil and spiteful werewolf, he thirsts for blood and impatiently awaits Dumbledore's demise.</p>`
+        {position: [ 34.39181370429739, 132.45212742502892 ],
+         title: "Hiroshima Peace Memorial Museum",
+         description: `<p>Exhibits.</p>`
         },
-        {position: [55.61679475360749,-1.6392910480499268],
-         title: "Isle of the Locket",
-         description: `<p>A forlorn and terrifying sea cave, guarded by an army of the undead and many other magical protections</p>`},
-        {position: [ 55.49086601004396, -1.5939261297996548 ],
-         title: "Draco Malfoy",
-         description: "<p>Weak-willed, dissatisfied, and a natural bully, Draco Malfoy has nonetheless plotted the murder of his own headmaster.</p>"},
-        {position: [ 55.49046495468512, -1.5939583064545149 ],
-         title: "Severus Snape",
-         icon: mysteryIcon,
-         description: `<p>what drives him? How has he survived so long with so much decption, such intense longing, guilt, and hatred?`}
+        {position: [ 34.39292986770104, 132.4531190159095 ],
+         title: "National Hiroshima Peace Memorial Hall",
+         description: `<p>Opened in 2002/</p>`},
+        {position: [ 34.393453229205925, 132.45275983366514 ],
+         title: "Peace Light",
+         description: '<p>The fire has been burning since August 1, 1964.</p>'},
+         {position: [ 34.39428475593624, 132.4518720636231 ],
+            title: "Korean Atomic Bomb Victims Memorial",
+            icon: mysteryIcon,
+            description: '<p>Constructed on April 10, 1970.</p>'},
+        {position: [ 34.39547749360947, 132.45356903941789 ],
+         title: "Atomic Bomb Dome",
+         description: `<p>A UNESCO World Heritage Site</p>`}
     ],
     gryfMarkerInfo =
     [{position: [55.49058639152367,-1.5951092937469482],
@@ -119,8 +122,8 @@ let slythMarkerInfo =
 
 let gryfMarkers = processMarkerLayer(gryfMarkerInfo,
                                      {description: 'Gryffindor: People and Places', defaultIcon: gryfIcon}),
-    slythMarkers = processMarkerLayer(slythMarkerInfo,
-                                      {description: 'Slytherin: Peple and Places', defaultIcon: slythIcon});
+    hiroshimaMarkers = processMarkerLayer(hiroshimapeacepark,
+                                      {description: 'Hiroshima Peace Memorial Park', defaultIcon: slythIcon});
 
 
 
@@ -135,31 +138,266 @@ let gryfMarkers = processMarkerLayer(gryfMarkerInfo,
 // you can create geoJSON layers here: http://geojson.io/
 // and learn more about the format here: https://en.wikipedia.org/wiki/GeoJSON
 // to set the line and fill color, you will need to set the `myColor` property as below. 
-const townsData={
-    "type": "FeatureCollection",
-    "description": "Magical Municipalities",
-  "features": [
-    {
-      "type": "Feature",
-        "properties": {myColor: hogCol, title: "Hogwarts School", description: "Terrifying events are commonplace here." },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-            [[-1.5929424762725828,55.49200869560172],[-1.5931355953216553,55.491753414035976],[-1.5934574604034424,55.49184458621365],[-1.5935111045837402,55.49174125772966],[-1.5935754776000977,55.491552834502244],[-1.5937042236328125,55.4914069578362],[-1.5939724445343018,55.491212454774455],[-1.5942513942718506,55.4911152028834],[-1.5946805477142334,55.491084811618215],[-1.595292091369629,55.4910604985892],[-1.595635414123535,55.49106657684784],[-1.5957105159759521,55.491121281133644],[-1.5959036350250244,55.49102402901751],[-1.5959250926971436,55.49093285494058],[-1.5960323810577393,55.49078697597856],[-1.5962040424346924,55.49052560815388],[-1.5962576866149902,55.49022168989803],[-1.5962469577789307,55.49010620034601],[-1.5961718559265137,55.48994208303175],[-1.5960967540740967,55.489765808117795],[-1.5959680080413818,55.48957737544101],[-1.5957856178283691,55.48941933443642],[-1.5954852104187012,55.489291685469844],[-1.5952062606811523,55.489255214260574],[-1.5951526165008545,55.48916403608966],[-1.5947985649108887,55.48930384253212],[-1.5947234630584717,55.489364627787104],[-1.5943479537963867,55.48943756996929],[-1.5939295291900633,55.48960776786919],[-1.5937042236328125,55.489711101949666],[-1.5934574604034424,55.48978404349032],[-1.5933179855346677,55.48978404349032],[-1.593436002731323,55.48990561242462],[-1.5932321548461914,55.49002110256471],[-1.593017578125,55.490094043531386],[-1.5929424762725828,55.49039796277202],[-1.5928030014038086,55.49066540976418],[-1.5927600860595703,55.49105442032959],[-1.5926849842071533,55.49143127065138],[-1.5926635265350342,55.491704788788255],[-1.5925991535186768,55.49185066435133],[-1.5929424762725828,55.49200869560172]]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-        "properties": {myColor: meadeCol, title: "Town of Hogsmeade", description: "Home of Butterbeer"},
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [[[-1.6042613983154297,55.490701879667895],[-1.6042077541351318,55.49065933144361],[-1.6042184829711914,55.49068364472025],[-1.604926586151123,55.49031894399501],[-1.607351303100586,55.49065933144361],[-1.6081881523132324,55.489923847732406],[-1.6085636615753174,55.48901815057725],[-1.6068792343139648,55.48843460312515],[-1.6042506694793701,55.487723392980776],[-1.6029417514801023,55.48743161074576],[-1.600785255432129,55.48822792799636],[-1.5991652011871336,55.48898167911473],[-1.599959135055542,55.490033259401876],[-1.5986931324005127,55.491479896236754],[-1.5987253189086914,55.49171694510582],[-1.5996050834655762,55.49194791442662],[-1.6010427474975586,55.49192360193031],[-1.6019654273986814,55.49204516426178],[-1.6025233268737793,55.491795961078495],[-1.6033065319061277,55.491340097517046],[-1.6042613983154297,55.490701879667895]]        ]
-      }
+    const townsData={
+        "type": "FeatureCollection",
+        "description": "Memorials",
+      "features": [
+        {
+          "type": "Feature",
+            "properties": {myColor: hogCol, title: "Hiroshima Peace Park Memorial", description: "Established in " },
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                  [
+                    129.8624324798584,
+                    32.77438008592417
+                  ],
+                  [
+                    129.86309230327606,
+                    32.77463267074292
+                  ],
+                  [
+                    129.86321568489075,
+                    32.77470934813534
+                  ],
+                  [
+                    129.86341416835785,
+                    32.77504311954437
+                  ],
+                  [
+                    129.8636394739151,
+                    32.77503409871193
+                  ],
+                  [
+                    129.8636770248413,
+                    32.775205494371775
+                  ],
+                  [
+                    129.8637467622757,
+                    32.77540846248942
+                  ],
+                  [
+                    129.86393988132477,
+                    32.775742231276325
+                  ],
+                  [
+                    129.8640739917755,
+                    32.77586852184223
+                  ],
+                  [
+                    129.86401498317719,
+                    32.776125612797536
+                  ],
+                  [
+                    129.86443877220154,
+                    32.77659017878043
+                  ],
+                  [
+                    129.86464262008667,
+                    32.77698257728426
+                  ],
+                  [
+                    129.8645406961441,
+                    32.77698257728426
+                  ],
+                  [
+                    129.86376285552979,
+                    32.77731182986616
+                  ],
+                  [
+                    129.8632800579071,
+                    32.776545075393244
+                  ],
+                  [
+                    129.86273288726807,
+                    32.77617973711454
+                  ],
+                  [
+                    129.86293137073517,
+                    32.77613914387987
+                  ],
+                  [
+                    129.86283481121063,
+                    32.776012853698056
+                  ],
+                  [
+                    129.86275970935822,
+                    32.77586852184223
+                  ],
+                  [
+                    129.86272215843198,
+                    32.77587303221626
+                  ],
+                  [
+                    129.86262023448944,
+                    32.775620450918055
+                  ],
+                  [
+                    129.86250758171082,
+                    32.77562947169106
+                  ],
+                  [
+                    129.86243784427643,
+                    32.77555730548148
+                  ],
+                  [
+                    129.86243784427643,
+                    32.7752866816744
+                  ],
+                  [
+                    129.86251294612885,
+                    32.77497095285928
+                  ],
+                  [
+                    129.86249148845673,
+                    32.77496193201954
+                  ],
+                  [
+                    129.862539768219,
+                    32.774731900297
+                  ],
+                  [
+                    129.86236810684204,
+                    32.7746822855338
+                  ],
+                  [
+                    129.8624324798584,
+                    32.77438008592417
+                  ]
+                ]
+              ]
+          }
+        },
+        {
+          "type": "Feature",
+            "properties": {myColor: meadeCol, title: "Nagasaki Peace Park", description: "Established "},
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                  [
+                    129.8624324798584,
+                    32.77438008592417
+                  ],
+                  [
+                    129.86309230327606,
+                    32.77463267074292
+                  ],
+                  [
+                    129.86321568489075,
+                    32.77470934813534
+                  ],
+                  [
+                    129.86341416835785,
+                    32.77504311954437
+                  ],
+                  [
+                    129.8636394739151,
+                    32.77503409871193
+                  ],
+                  [
+                    129.8636770248413,
+                    32.775205494371775
+                  ],
+                  [
+                    129.8637467622757,
+                    32.77540846248942
+                  ],
+                  [
+                    129.86393988132477,
+                    32.775742231276325
+                  ],
+                  [
+                    129.8640739917755,
+                    32.77586852184223
+                  ],
+                  [
+                    129.86401498317719,
+                    32.776125612797536
+                  ],
+                  [
+                    129.86443877220154,
+                    32.77659017878043
+                  ],
+                  [
+                    129.86464262008667,
+                    32.77698257728426
+                  ],
+                  [
+                    129.8645406961441,
+                    32.77698257728426
+                  ],
+                  [
+                    129.86376285552979,
+                    32.77731182986616
+                  ],
+                  [
+                    129.8632800579071,
+                    32.776545075393244
+                  ],
+                  [
+                    129.86273288726807,
+                    32.77617973711454
+                  ],
+                  [
+                    129.86293137073517,
+                    32.77613914387987
+                  ],
+                  [
+                    129.86283481121063,
+                    32.776012853698056
+                  ],
+                  [
+                    129.86275970935822,
+                    32.77586852184223
+                  ],
+                  [
+                    129.86272215843198,
+                    32.77587303221626
+                  ],
+                  [
+                    129.86262023448944,
+                    32.775620450918055
+                  ],
+                  [
+                    129.86250758171082,
+                    32.77562947169106
+                  ],
+                  [
+                    129.86243784427643,
+                    32.77555730548148
+                  ],
+                  [
+                    129.86243784427643,
+                    32.7752866816744
+                  ],
+                  [
+                    129.86251294612885,
+                    32.77497095285928
+                  ],
+                  [
+                    129.86249148845673,
+                    32.77496193201954
+                  ],
+                  [
+                    129.862539768219,
+                    32.774731900297
+                  ],
+                  [
+                    129.86236810684204,
+                    32.7746822855338
+                  ],
+                  [
+                    129.8624324798584,
+                    32.77438008592417
+                  ]
+                ]
+              ]
+          }
+        }
+      ]
     }
-  ]
-}
-
 let towns = processJSONLayer(townsData)
 
 ////////////////////////////////////////////////////////
@@ -239,7 +477,7 @@ let paths = processManualLayers([vanishingPath, tunnelPath, horcruxPath], {descr
 // these layers will be added to the map
 // you should change these variable names
 // to align with the variables you've defiend above
-let allLayers = [gryfMarkers, slythMarkers, towns, houses, paths];
+let allLayers = [gryfMarkers, hiroshimaMarkers, towns, houses, paths];
 
 
 ///////////////////////////////////////
