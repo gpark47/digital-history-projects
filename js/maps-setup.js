@@ -51,17 +51,17 @@ const myIconClass = L.Icon.extend({
     }});
 // create the new icon types -- cf. https://leafletjs.com/examples/custom-icons/ and
 // also https://leafletjs.com/reference-1.5.0.html#icon
-const gryfIcon = new myIconClass({iconUrl: yellowURL}),
-      slythIcon = new myIconClass({iconUrl: greenURL}),
+const NagIcon = new myIconClass({iconUrl: yellowURL}),
+      HirIcon = new myIconClass({iconUrl: greenURL}),
       mysteryIcon = new myIconClass({iconUrl: greyURL});
 
 
 // storing colors in variables, to make it easier to change all the related features at once
 // you should probably do this too. 
-let gryfCol = 'yellow',
-    slythCol = 'green',
-    hogCol = 'grey',
-    meadeCol = 'rgb(40,40,120)',
+let NagCol = 'yellow',
+    HirCol = 'green',
+    HirParkCol = 'grey',
+    NagParkCol = 'rgb(40,40,120)',
     towerCol = 'blue';
 
 ///////////////////////////////////////////////////////////////////////
@@ -111,19 +111,31 @@ let hiroshimapeacepark =
             description: '<p>Constructed on April 10, 1970.</p>'},
         {position: [ 34.39547749360947, 132.45356903941789 ],
          title: "Atomic Bomb Dome",
-         description: `<p>A UNESCO World Heritage Site</p>`}
+         description: `<p>A UNESCO World Heritage Site</p>`},
+         {position: [ 34.3913882257594, 132.45196602158487 ],
+            title: "Prayer Fountain",
+            description: `<p>"Water to Water"</p>`}
     ],
-    gryfMarkerInfo =
-    [{position: [55.49058639152367,-1.5951092937469482],
-      title: "Dumbledore Lies Dying",
-      description: "<p>Afflicted by a curse for over a year, and gravely weakened by a powerful poison, Dumbledore lies on the ground, barely mobile.</p>"
-     }];
+    nagasakipeacepark =
+    [{position: [ 129.8639428988099, 32.77692958103568 ],
+      title: "Peace Statue",
+      description: "<p>'The right hand shows the atomic bomb, the left hand prays for peace, and the face prays for the souls of the war victims.'</p>"
+     },
+     {position: [ 129.86305609345436, 32.775444545661884 ],
+        title: "Fountain of Peace",
+        description: `<p>Established in 1969 for victims who searched for the water.</p>`},
+    {position: [ 129.86305609345436, 32.775444545661884 ],
+        title: "Fountain of Peace",
+        description: `<p>Established in 1969 for victims who searched for the water.</p>`},
+    
+
+    ];
 
 
-let gryfMarkers = processMarkerLayer(gryfMarkerInfo,
-                                     {description: 'Gryffindor: People and Places', defaultIcon: gryfIcon}),
+let nagasakiMarkers = processMarkerLayer(nagasakipeacepark,
+                                     {description: 'Nagasaki Peace Park (Wish Zone)', defaultIcon: NagIcon}),
     hiroshimaMarkers = processMarkerLayer(hiroshimapeacepark,
-                                      {description: 'Hiroshima Peace Memorial Park', defaultIcon: slythIcon});
+                                      {description: 'Hiroshima Peace Memorial Park', defaultIcon: HirIcon});
 
 
 
@@ -138,267 +150,311 @@ let gryfMarkers = processMarkerLayer(gryfMarkerInfo,
 // you can create geoJSON layers here: http://geojson.io/
 // and learn more about the format here: https://en.wikipedia.org/wiki/GeoJSON
 // to set the line and fill color, you will need to set the `myColor` property as below. 
-    const townsData={
-        "type": "FeatureCollection",
-        "description": "Memorials",
-      "features": [
-        {
-          "type": "Feature",
-            "properties": {myColor: hogCol, title: "Hiroshima Peace Park Memorial", description: "Established in " },
-          "geometry": {
-            "type": "Polygon",
-            "coordinates": [
-                [
-                  [
-                    129.8624324798584,
-                    32.77438008592417
-                  ],
-                  [
-                    129.86309230327606,
-                    32.77463267074292
-                  ],
-                  [
-                    129.86321568489075,
-                    32.77470934813534
-                  ],
-                  [
-                    129.86341416835785,
-                    32.77504311954437
-                  ],
-                  [
-                    129.8636394739151,
-                    32.77503409871193
-                  ],
-                  [
-                    129.8636770248413,
-                    32.775205494371775
-                  ],
-                  [
-                    129.8637467622757,
-                    32.77540846248942
-                  ],
-                  [
-                    129.86393988132477,
-                    32.775742231276325
-                  ],
-                  [
-                    129.8640739917755,
-                    32.77586852184223
-                  ],
-                  [
-                    129.86401498317719,
-                    32.776125612797536
-                  ],
-                  [
-                    129.86443877220154,
-                    32.77659017878043
-                  ],
-                  [
-                    129.86464262008667,
-                    32.77698257728426
-                  ],
-                  [
-                    129.8645406961441,
-                    32.77698257728426
-                  ],
-                  [
-                    129.86376285552979,
-                    32.77731182986616
-                  ],
-                  [
-                    129.8632800579071,
-                    32.776545075393244
-                  ],
-                  [
-                    129.86273288726807,
-                    32.77617973711454
-                  ],
-                  [
-                    129.86293137073517,
-                    32.77613914387987
-                  ],
-                  [
-                    129.86283481121063,
-                    32.776012853698056
-                  ],
-                  [
-                    129.86275970935822,
-                    32.77586852184223
-                  ],
-                  [
-                    129.86272215843198,
-                    32.77587303221626
-                  ],
-                  [
-                    129.86262023448944,
-                    32.775620450918055
-                  ],
-                  [
-                    129.86250758171082,
-                    32.77562947169106
-                  ],
-                  [
-                    129.86243784427643,
-                    32.77555730548148
-                  ],
-                  [
-                    129.86243784427643,
-                    32.7752866816744
-                  ],
-                  [
-                    129.86251294612885,
-                    32.77497095285928
-                  ],
-                  [
-                    129.86249148845673,
-                    32.77496193201954
-                  ],
-                  [
-                    129.862539768219,
-                    32.774731900297
-                  ],
-                  [
-                    129.86236810684204,
-                    32.7746822855338
-                  ],
-                  [
-                    129.8624324798584,
-                    32.77438008592417
-                  ]
-                ]
-              ]
-          }
-        },
-        {
-          "type": "Feature",
-            "properties": {myColor: meadeCol, title: "Nagasaki Peace Park", description: "Established "},
-          "geometry": {
-            "type": "Polygon",
-            "coordinates": [
-                [
-                  [
-                    129.8624324798584,
-                    32.77438008592417
-                  ],
-                  [
-                    129.86309230327606,
-                    32.77463267074292
-                  ],
-                  [
-                    129.86321568489075,
-                    32.77470934813534
-                  ],
-                  [
-                    129.86341416835785,
-                    32.77504311954437
-                  ],
-                  [
-                    129.8636394739151,
-                    32.77503409871193
-                  ],
-                  [
-                    129.8636770248413,
-                    32.775205494371775
-                  ],
-                  [
-                    129.8637467622757,
-                    32.77540846248942
-                  ],
-                  [
-                    129.86393988132477,
-                    32.775742231276325
-                  ],
-                  [
-                    129.8640739917755,
-                    32.77586852184223
-                  ],
-                  [
-                    129.86401498317719,
-                    32.776125612797536
-                  ],
-                  [
-                    129.86443877220154,
-                    32.77659017878043
-                  ],
-                  [
-                    129.86464262008667,
-                    32.77698257728426
-                  ],
-                  [
-                    129.8645406961441,
-                    32.77698257728426
-                  ],
-                  [
-                    129.86376285552979,
-                    32.77731182986616
-                  ],
-                  [
-                    129.8632800579071,
-                    32.776545075393244
-                  ],
-                  [
-                    129.86273288726807,
-                    32.77617973711454
-                  ],
-                  [
-                    129.86293137073517,
-                    32.77613914387987
-                  ],
-                  [
-                    129.86283481121063,
-                    32.776012853698056
-                  ],
-                  [
-                    129.86275970935822,
-                    32.77586852184223
-                  ],
-                  [
-                    129.86272215843198,
-                    32.77587303221626
-                  ],
-                  [
-                    129.86262023448944,
-                    32.775620450918055
-                  ],
-                  [
-                    129.86250758171082,
-                    32.77562947169106
-                  ],
-                  [
-                    129.86243784427643,
-                    32.77555730548148
-                  ],
-                  [
-                    129.86243784427643,
-                    32.7752866816744
-                  ],
-                  [
-                    129.86251294612885,
-                    32.77497095285928
-                  ],
-                  [
-                    129.86249148845673,
-                    32.77496193201954
-                  ],
-                  [
-                    129.862539768219,
-                    32.774731900297
-                  ],
-                  [
-                    129.86236810684204,
-                    32.7746822855338
-                  ],
-                  [
-                    129.8624324798584,
-                    32.77438008592417
-                  ]
-                ]
-              ]
-          }
-        }
+const parksData={
+  "type": "FeatureCollection",
+  "description": "Memorials",
+"features": [
+  {
+    "type": "Feature",
+      "properties": {myColor: HirParkCol, title: "Hiroshima Peace Park Memorial", description: "Established in " },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            132.44857549667358,
+            34.39155926825359
+          ],
+          [
+            132.44961619377136,
+            34.391337932952965
+          ],
+          [
+            132.4494767189026,
+            34.39113430395948
+          ],
+          [
+            132.45237350463867,
+            34.39035519715012
+          ],
+          [
+            132.4524164199829,
+            34.39063850955618
+          ],
+          [
+            132.45418667793274,
+            34.390125005114164
+          ],
+          [
+            132.4547982215881,
+            34.39178060296896
+          ],
+          [
+            132.45494842529297,
+            34.393020066559295
+          ],
+          [
+            132.4549376964569,
+            34.39313515867569
+          ],
+          [
+            132.45399355888364,
+            34.39473757862432
+          ],
+          [
+            132.4544334411621,
+            34.39590617493213
+          ],
+          [
+            132.45321035385132,
+            34.396269144706565
+          ],
+          [
+            132.45315670967102,
+            34.396154056899746
+          ],
+          [
+            132.45176196098328,
+            34.39648161408796
+          ],
+          [
+            132.45028138160706,
+            34.39433918978991
+          ],
+          [
+            132.45008826255798,
+            34.393949652207155
+          ],
+          [
+            132.4498736858368,
+            34.393657497830326
+          ],
+          [
+            132.4494767189026,
+            34.3930731860173
+          ],
+          [
+            132.44857549667358,
+            34.39155926825359
+          ]
+        ]
       ]
     }
-let towns = processJSONLayer(townsData)
+  },
+  {
+    "type": "Feature",
+      "properties": {myColor: NagParkCol, title: "Nagasaki Peace Park: Wish Zone", description: "Established "},
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+          [
+            [
+              129.8624324798584,
+              32.77438008592417
+            ],
+            [
+              129.86309230327606,
+              32.77463267074292
+            ],
+            [
+              129.86321568489075,
+              32.77470934813534
+            ],
+            [
+              129.86341416835785,
+              32.77504311954437
+            ],
+            [
+              129.8636394739151,
+              32.77503409871193
+            ],
+            [
+              129.8636770248413,
+              32.775205494371775
+            ],
+            [
+              129.8637467622757,
+              32.77540846248942
+            ],
+            [
+              129.86393988132477,
+              32.775742231276325
+            ],
+            [
+              129.8640739917755,
+              32.77586852184223
+            ],
+            [
+              129.86401498317719,
+              32.776125612797536
+            ],
+            [
+              129.86443877220154,
+              32.77659017878043
+            ],
+            [
+              129.86464262008667,
+              32.77698257728426
+            ],
+            [
+              129.8645406961441,
+              32.77698257728426
+            ],
+            [
+              129.86376285552979,
+              32.77731182986616
+            ],
+            [
+              129.8632800579071,
+              32.776545075393244
+            ],
+            [
+              129.86273288726807,
+              32.77617973711454
+            ],
+            [
+              129.86293137073517,
+              32.77613914387987
+            ],
+            [
+              129.86283481121063,
+              32.776012853698056
+            ],
+            [
+              129.86275970935822,
+              32.77586852184223
+            ],
+            [
+              129.86272215843198,
+              32.77587303221626
+            ],
+            [
+              129.86262023448944,
+              32.775620450918055
+            ],
+            [
+              129.86250758171082,
+              32.77562947169106
+            ],
+            [
+              129.86243784427643,
+              32.77555730548148
+            ],
+            [
+              129.86243784427643,
+              32.7752866816744
+            ],
+            [
+              129.86251294612885,
+              32.77497095285928
+            ],
+            [
+              129.86249148845673,
+              32.77496193201954
+            ],
+            [
+              129.862539768219,
+              32.774731900297
+            ],
+            [
+              129.86236810684204,
+              32.7746822855338
+            ],
+            [
+              129.8624324798584,
+              32.77438008592417
+            ]
+          ]
+        ]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {myColor: NagParkCol, title: "Nagasaki Peace Park: Prayer Zone", description: "Established "},
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            129.86355364322662,
+            32.774235751420164
+          ],
+          [
+            129.86256122589108,
+            32.77375764170362
+          ],
+          [
+            129.86289381980896,
+            32.7721067902952
+          ],
+          [
+            129.86306011676788,
+            32.7721744487416
+          ],
+          [
+            129.86323177814484,
+            32.772138364243254
+          ],
+          [
+            129.8632854223251,
+            32.77219700154563
+          ],
+          [
+            129.8632425069809,
+            32.77245861365479
+          ],
+          [
+            129.86327469348907,
+            32.77246312420164
+          ],
+          [
+            129.86325860023499,
+            32.772517250746155
+          ],
+          [
+            129.8633712530136,
+            32.77253078237714
+          ],
+          [
+            129.86341953277588,
+            32.77240899762421
+          ],
+          [
+            129.86374139785767,
+            32.77248116638681
+          ],
+          [
+            129.86402034759521,
+            32.772305254925456
+          ],
+          [
+            129.86406862735748,
+            32.773559180312155
+          ],
+          [
+            129.8636394739151,
+            32.773559180312155
+          ],
+          [
+            129.8636072874069,
+            32.773753131222364
+          ],
+          [
+            129.86351609230042,
+            32.774010228288994
+          ],
+          [
+            129.86355364322662,
+            32.774235751420164
+          ]
+        ]
+      ]
+    }
+  },
+]
+};
+let parks = processJSONLayer(parksData)
+
 
 ////////////////////////////////////////////////////////
 // MAP DATA PART 3: DIRECT CREATION OF SHAPE OVERLAYS //
@@ -408,40 +464,39 @@ let towns = processJSONLayer(townsData)
 // Hogwarts Buildings Objects and LayerGroup
 // API docs: https://leafletjs.com/reference-1.5.0.html#polygon
 //  (keep scrolling for docs on rectangles and circles)
-let gryffindor = L.rectangle([[ 55.49021561150901, -1.5941441059112549],
-                              [55.49107265510559,-1.5931355953216553]], {
-    color: gryfCol,
+let nagasakihypo = L.circle([ 32.77373031623168, 129.86322281575983 ], {
+    color: 'rgb(155, 102, 102)',
     opacity: 0.8,
     weight: 2,
-    fillColor: gryfCol,
+    fillColor: NagCol,
     fillOpacity: 0.35,
-    title: 'Gryffindor',
-    windowContent: `<h3>Gryffindor</h3><p>The Good Guys Live here</p3>`
+    title: 'Nagasaki\'s Hypocenter',
+    windowContent: `<h3>Nagasaki Hypocenter</h3><p>Location of Impact</p3>`
 });
 
-let slytherin = L.rectangle([[ 55.48954090449621, -1.5956997871398926], [55.490288552115494, -1.594712734222412]], {
-    color: 'blue',
+let hiroshimahypo = L.circle([ 34.39464724174592, 132.45479192752794 ], {
+    color: 'rgb(155, 102, 102)',
     opacity: 0.8,
     weight: 2,
-    fillColor: slythCol,
+    fillColor: HirCol,
     fillOpacity: 0.35,
-    title: 'Slytherin',
-    windowContent: `<h3>Slytherin</h3><p>The Bad Guys Live here</p3>`
+    title: 'Hiroshima\'s Hypocenter',
+    windowContent: `<h3>Hiroshima\'s Hypocenter</h3><p>Location of impact</p3>`
 });
 
-let headmasterTower = L.circle([55.4907, -1.5944], {
-    color: towerCol,
-    opacity: 0.8,
-    weight: 2,
-    fillColor: towerCol,
-    fillOpacity: 0.35,
-    radius: 40,
-    title: 'Headmaster\'s Tower',
-    windowContent: `<h3>Headmaster's Tower</h3><p>Scene of the the Fatal Act.</p>`
-});
+///let headmasterTower = L.circle([55.4907, -1.5944], {
+  ///  color: towerCol,
+   /// opacity: 0.8,
+  ///  weight: 2,
+   /// fillColor: towerCol,
+   /// fillOpacity: 0.35,
+   /// radius: 40,
+  ///  title: 'Headmaster\'s Tower',
+  ///  windowContent: `<h3>Headmaster's Tower</h3><p>Scene of the the Fatal Act.</p>`
+///});
 
-let houses = processManualLayers([gryffindor, slytherin, headmasterTower],
-                                 {description: 'Important Hogwarts Buildings'});
+let hypocenters = processManualLayers([nagasakihypo, hiroshimahypo],
+                                 {description: 'Important Locations'});
 
 
 
@@ -450,7 +505,7 @@ let houses = processManualLayers([gryffindor, slytherin, headmasterTower],
 let vanishingPath = L.polyline([[51.37178037591737, -0.2197265625],
                                 [55.36857598381045, -1.7512893676757812],
                                 [55.48997247517858,-1.5944015979766843 ]], {
-                                    color: slythCol,
+                                    color: HirCol,
                                     weight: 6,
                                     title: 'DeathEaters Travel',
                                     windowContent: `<h3>Line of Travel for Deatheaters</h3><p>From the twin Vanishing Cabinet, the Deatheraters can travel directly from Bourquin and Burkes</p>`})
@@ -458,14 +513,14 @@ let vanishingPath = L.polyline([[51.37178037591737, -0.2197265625],
 
 let tunnelPath = L.polyline([[55.49065933144361,-1.6042077541351318],
                                 [55.49027247517858,-1.5943015979766843 ]], {
-                                    color: gryfCol,
+                                    color: NagCol,
                                     weight: 6,
                                     title: 'Tunnel to Hogsmeade',
                                     windowContent: `<h3>Marauders' Map Tunnel</h3><p>Not really sure why this worked in the first ocuple of books.</p>`})
 
 let horcruxPath = L.polyline([[55.49058639152367,-1.5951092937469482],
                               [55.61679475360749,-1.6392910480499268]], {
-                                  color: gryfCol,
+                                  color: NagCol,
                                   weight: 4,
                                   title: 'Return from Horcrux quest',
                                   windowContent: `<h3>Return Disapparation from Failed Horcrux quest</h3><p>Exhaisted and grieviously injured, Dumbledore returns to find the trap he had so long expected has been sprung.</p>`})
@@ -477,7 +532,7 @@ let paths = processManualLayers([vanishingPath, tunnelPath, horcruxPath], {descr
 // these layers will be added to the map
 // you should change these variable names
 // to align with the variables you've defiend above
-let allLayers = [gryfMarkers, hiroshimaMarkers, towns, houses, paths];
+let allLayers = [nagasakiMarkers, hiroshimaMarkers, parks, hypocenters, paths];
 
 
 ///////////////////////////////////////
@@ -526,7 +581,7 @@ function createMap (element) {
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
 	attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
 	maxZoom: 18,
-        id: 'mapbox/dark-v10',
+        id: 'mapbox/satellite-v9',
         // id: 'titaniumbones/ckhnvk5pl18o71apeq8q1duhc',
         tileSize: 512,
         zoomOffset: -1,
