@@ -60,8 +60,8 @@ const NagIcon = new myIconClass({iconUrl: yellowURL}),
 // you should probably do this too. 
 let NagCol = 'yellow',
     HirCol = 'green',
-    HirParkCol = 'grey',
-    NagParkCol = 'rgb(40,40,120)',
+    HirParkCol = 'green',
+    NagParkCol = 'yellow',
     towerCol = 'blue';
 
 ///////////////////////////////////////////////////////////////////////
@@ -91,7 +91,7 @@ let NagCol = 'yellow',
 // but writing them this way keeps the code as D.R.Y. as possible
 let hiroshimapeacepark =
     [
-        {position: [ 34.39292585118296, 132.45255337927574 ],
+        {position: [ 34.39298567151763, 132.45252875707192 ],
          title: "Cenotaph for the A-bomb Victims",
          description: '<p>The inscription reads: .</p>'
         },
@@ -99,12 +99,12 @@ let hiroshimapeacepark =
          title: "Hiroshima Peace Memorial Museum",
          description: `<p>Exhibits.</p>`
         },
-        {position: [ 34.39292986770104, 132.4531190159095 ],
+        {position: [ 34.39301346805282, 132.45327164607218 ],
          title: "National Hiroshima Peace Memorial Hall",
          description: `<p>Opened in 2002/</p>`},
-        {position: [ 34.393453229205925, 132.45275983366514 ],
-         title: "Peace Light",
-         description: '<p>The fire has been burning since August 1, 1964.</p>'},
+        {position: [ 34.39413439776468, 132.45277253745488 ],
+         title: "Children's Peace Monument", 
+         description: '<p>for the children</p>'},
          {position: [ 34.39428475593624, 132.4518720636231 ],
             title: "Korean Atomic Bomb Victims Memorial",
             icon: mysteryIcon,
@@ -114,26 +114,35 @@ let hiroshimapeacepark =
          description: `<p>A UNESCO World Heritage Site</p>`},
          {position: [ 34.3913882257594, 132.45196602158487 ],
             title: "Prayer Fountain",
-            description: `<p>"Water to Water"</p>`}
+            description: `<p>"Water to Water"</p>`},
+         {position: [ 34.39348990573147, 132.45269278087534 ],
+            title: "Flame of Peace",
+            description: `<p>"Burning since August 1, 1964."</p>`}
     ],
     nagasakipeacepark =
-    [{position: [ 129.8639428988099, 32.77692958103568 ],
+    [
+      {position: [ 32.77692958103568, 129.8639428988099 ],
       title: "Peace Statue",
       description: "<p>'The right hand shows the atomic bomb, the left hand prays for peace, and the face prays for the souls of the war victims.'</p>"
      },
-     {position: [ 129.86305609345436, 32.775444545661884 ],
+     {position: [ 32.775444545661884, 129.86305609345436 ],
         title: "Fountain of Peace",
         description: `<p>Established in 1969 for victims who searched for the water.</p>`},
-    {position: [ 129.86305609345436, 32.775444545661884 ],
-        title: "Fountain of Peace",
-        description: `<p>Established in 1969 for victims who searched for the water.</p>`},
-    
-
+    {position: [ 32.77373219188245, 129.86322358762905 ],
+        title: "Hypocenter Cenotaph",
+        description: `<p>Reads:</p>`},
+    {position: [ 32.772608504822784, 129.86456629471718 ],
+        title: "Nagasaki Atomic Bomb Memorial",
+        description: `<p>part of the learning zone</p>`},
+    {position: [ 32.7724994228233, 129.8635187690558 ],
+        title: "Nagasaki Korean Atomic Bomb Victims' Memorial",
+        icon: mysteryIcon,
+        description: `<p>Erected August 1976</p>`},
     ];
 
 
 let nagasakiMarkers = processMarkerLayer(nagasakipeacepark,
-                                     {description: 'Nagasaki Peace Park (Wish Zone)', defaultIcon: NagIcon}),
+                                     {description: 'Nagasaki Peace Park', defaultIcon: NagIcon}),
     hiroshimaMarkers = processMarkerLayer(hiroshimapeacepark,
                                       {description: 'Hiroshima Peace Memorial Park', defaultIcon: HirIcon});
 
@@ -152,7 +161,7 @@ let nagasakiMarkers = processMarkerLayer(nagasakipeacepark,
 // to set the line and fill color, you will need to set the `myColor` property as below. 
 const parksData={
   "type": "FeatureCollection",
-  "description": "Memorials",
+  "description": "Memorial Spaces",
 "features": [
   {
     "type": "Feature",
@@ -451,6 +460,58 @@ const parksData={
       ]
     }
   },
+  {
+    "type": "Feature",
+    "properties": {myColor: NagParkCol, title: "Nagasaki Peace Park: Learning Zone", description: "Established ",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            129.86532390117645,
+            32.77317578773447
+          ],
+          [
+            129.86471235752106,
+            32.773198340284765
+          ],
+          [
+            129.86444413661957,
+            32.77312166159046
+          ],
+          [
+            129.86411154270172,
+            32.77321638232088
+          ],
+          [
+            129.86407935619354,
+            32.77229172326017
+          ],
+          [
+            129.86428320407867,
+            32.771863219462325
+          ],
+          [
+            129.8646640777588,
+            32.7718947934968
+          ],
+          [
+            129.86472845077515,
+            32.77189930407222
+          ],
+          [
+            129.86550629138947,
+            32.771836155995324
+          ],
+          [
+            129.86532390117645,
+            32.77317578773447
+          ]
+        ]
+      ]
+    }
+  }
+}
 ]
 };
 let parks = processJSONLayer(parksData)
@@ -464,36 +525,39 @@ let parks = processJSONLayer(parksData)
 // Hogwarts Buildings Objects and LayerGroup
 // API docs: https://leafletjs.com/reference-1.5.0.html#polygon
 //  (keep scrolling for docs on rectangles and circles)
-let nagasakihypo = L.circle([ 32.77373031623168, 129.86322281575983 ], {
-    color: 'rgb(155, 102, 102)',
-    opacity: 0.8,
-    weight: 2,
-    fillColor: NagCol,
-    fillOpacity: 0.35,
-    title: 'Nagasaki\'s Hypocenter',
-    windowContent: `<h3>Nagasaki Hypocenter</h3><p>Location of Impact</p3>`
-});
 
 let hiroshimahypo = L.circle([ 34.39464724174592, 132.45479192752794 ], {
     color: 'rgb(155, 102, 102)',
-    opacity: 0.8,
-    weight: 2,
+    opacity: 1,
+    weight: 3,
     fillColor: HirCol,
-    fillOpacity: 0.35,
+    fillOpacity: 0.10,
     title: 'Hiroshima\'s Hypocenter',
     windowContent: `<h3>Hiroshima\'s Hypocenter</h3><p>Location of impact</p3>`
 });
 
-///let headmasterTower = L.circle([55.4907, -1.5944], {
-  ///  color: towerCol,
-   /// opacity: 0.8,
-  ///  weight: 2,
-   /// fillColor: towerCol,
-   /// fillOpacity: 0.35,
-   /// radius: 40,
-  ///  title: 'Headmaster\'s Tower',
-  ///  windowContent: `<h3>Headmaster's Tower</h3><p>Scene of the the Fatal Act.</p>`
-///});
+let nagasakihypo = L.circle([ 32.77373031623168, 129.86322281575983 ], {
+  color: 'rgb(155, 102, 102)',
+  opacity: 1,
+  weight: 3,
+  fillColor: NagCol,
+  fillOpacity: 0.10,
+  title: 'Nagasaki\'s Hypocenter',
+  windowContent: `<h3>Nagasaki Hypocenter</h3><p>Location of Impact</p3>`
+});
+
+
+//let motoyasu = L.polygon([34.39409572901314, 132.45341151952744],[34.39409572901314, 132.4534222483635],
+  //  [ 34.394100155579046, 132.4534222483635],[34.394100155579046, 132.45341151952744],[34.39409572901314, 132.45341151952744], {
+    //color: towerCol,
+   // opacity: 0.8,
+    //weight: 2,
+   // fillColor: towerCol,
+    //fillOpacity: 0.35,
+    //radius: 40,
+    //title: 'Motoyasu Bridge',
+   // windowContent: `<h3></p>`
+//});
 
 let hypocenters = processManualLayers([nagasakihypo, hiroshimahypo],
                                  {description: 'Important Locations'});
@@ -511,12 +575,13 @@ let vanishingPath = L.polyline([[51.37178037591737, -0.2197265625],
                                     windowContent: `<h3>Line of Travel for Deatheaters</h3><p>From the twin Vanishing Cabinet, the Deatheraters can travel directly from Bourquin and Burkes</p>`})
 
 
-let tunnelPath = L.polyline([[55.49065933144361,-1.6042077541351318],
-                                [55.49027247517858,-1.5943015979766843 ]], {
+let nagasakiPath = L.polyline([[129.8624002933502,32.77451539930909],[129.86393988132477,32.77692845345556],[129.86253440380096,32.77408239575314],
+  [ 129.86359655857086, 32.77451539930909],[129.86343026161194,32.77378019410646 ],[129.86308157444,32.77365841106322],[129.8632961511612,32.77287809353503],
+  [ 129.8636555671692,32.77263452481303],[129.86442267894745,32.77262550373645],[129.86500203609467,32.77211581142437]], {
                                     color: NagCol,
                                     weight: 6,
-                                    title: 'Tunnel to Hogsmeade',
-                                    windowContent: `<h3>Marauders' Map Tunnel</h3><p>Not really sure why this worked in the first ocuple of books.</p>`})
+                                    title: 'Path along the Nagasaki Memorial',
+                                    windowContent: `<h3></p>`})
 
 let horcruxPath = L.polyline([[55.49058639152367,-1.5951092937469482],
                               [55.61679475360749,-1.6392910480499268]], {
@@ -524,7 +589,7 @@ let horcruxPath = L.polyline([[55.49058639152367,-1.5951092937469482],
                                   weight: 4,
                                   title: 'Return from Horcrux quest',
                                   windowContent: `<h3>Return Disapparation from Failed Horcrux quest</h3><p>Exhaisted and grieviously injured, Dumbledore returns to find the trap he had so long expected has been sprung.</p>`})
-let paths = processManualLayers([vanishingPath, tunnelPath, horcruxPath], {description: 'Paths'})
+let paths = processManualLayers([vanishingPath, nagasakiPath, horcruxPath], {description: 'Paths'})
 
 
 ////////////////////////////////////////////////
