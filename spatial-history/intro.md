@@ -10,6 +10,6 @@ Memorials are not only a physical site of remembrance, it is a site of pilgrimag
 
 > "The act of remembering is always mediated by and inseparable from the positions that one establishes in relation to social and political arrangements, in both the present and the future. At the same time, like a negative dialectic, the work of remembering is inevitably enabled by an accompanying process of forgetting."
 >
->-- Lisa Yoneyama^[Lisa Yoneyama, "Critical Warps: Facticity, Transformative Knowledge, and Postnationalist Criticism in the Smithsonian Controversy," *Positions* 5, 3 (August 1997) 780, doi: https://doi.org/10.1215/10679847-5-3-779.]
+>-- Lisa Yoneyama^[[Lisa Yoneyama, "Critical Warps: Facticity, Transformative Knowledge, and Postnationalist Criticism in the Smithsonian Controversy," *Positions* 5, 3 (August 1997) 780, doi: https://doi.org/10.1215/10679847-5-3-779.](www.read.dukeupress.edu/positions/article-abstract/5/3/779/21954/Critical-Warps-Facticity-Transformative-Knowledge)].
 
 </section>
