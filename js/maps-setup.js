@@ -93,52 +93,59 @@ let hiroshimapeacepark =
     [
         {position: [ 34.39298567151763, 132.45252875707192 ],
          title: "Cenotaph for the A-bomb Victims",
-         description: '<p>The inscription reads: .</p>'
+         description: '<p>The epitaph reads: "Please rest in peace (yasuraka ni nemutte kudasai), / For we shall not repeat the mistake (ayamachi wa kurikaeshimasenu kara)." .</p>'
         },
         {position: [ 34.39181370429739, 132.45212742502892 ],
          title: "Hiroshima Peace Memorial Museum",
-         description: `<p>Exhibits.</p>`
+         description: `<p>Composed of exhibits such as: Reality of the Atomic Bombing, The Dangers of Nuclear Weapons, and Hiroshima History.</p>`
         },
         {position: [ 34.39301346805282, 132.45327164607218 ],
          title: "National Hiroshima Peace Memorial Hall",
-         description: `<p>Opened in 2002/</p>`},
+         description: `<p>Opened in 2002 as a space of prayer and reflection.</p>`},
         {position: [ 34.39413439776468, 132.45277253745488 ],
          title: "Children's Peace Monument", 
-         description: '<p>for the children</p>'},
+         description: '<p>In memory of the death of innocent children.</p>'},
          {position: [ 34.39428475593624, 132.4518720636231 ],
             title: "Korean Atomic Bomb Victims Memorial",
             icon: mysteryIcon,
-            description: '<p>Constructed on April 10, 1970.</p>'},
+            description: '<p>Moved to this location in 1990.</p>'},
+        {position: [ 34.394513607625484, 132.4498207777244 ],
+            title: "Former location of the Korean Atomic Bomb Victims Memorial",
+            icon: mysteryIcon,
+            description: '<p>Constructed on April 10, 1970.</p>'},   
         {position: [ 34.39547749360947, 132.45356903941789 ],
          title: "Atomic Bomb Dome",
-         description: `<p>A UNESCO World Heritage Site</p>`},
+         description: `<p>A UNESCO World Heritage Site. One of the only building structures that was not completely destroyed by the atomic bomb.</p>`},
          {position: [ 34.3913882257594, 132.45196602158487 ],
             title: "Prayer Fountain",
-            description: `<p>"Water to Water"</p>`},
+            description: `<p>In memory of those who died while pleading for water.</p>`},
          {position: [ 34.39348990573147, 132.45269278087534 ],
             title: "Flame of Peace",
-            description: `<p>"Burning since August 1, 1964."</p>`}
+            description: `<p>This flame has been burning since August 1, 1964.</p>`}
     ],
     nagasakipeacepark =
     [
       {position: [ 32.77692958103568, 129.8639428988099 ],
       title: "Peace Statue",
-      description: "<p>'The right hand shows the atomic bomb, the left hand prays for peace, and the face prays for the souls of the war victims.'</p>"
+      description: "<p>Inscription from the sculptor Seibo Kitamura: 'The right hand shows the atomic bomb, the left hand prays for peace, and the face prays for the souls of the war victims.'</p>"
      },
      {position: [ 32.775444545661884, 129.86305609345436 ],
         title: "Fountain of Peace",
-        description: `<p>Established in 1969 for victims who searched for the water.</p>`},
+        description: `<p>Created in 1969 in memory of the A-bomb victims who died in search for water.</p>`},
     {position: [ 32.77373219188245, 129.86322358762905 ],
         title: "Hypocenter Cenotaph",
-        description: `<p>Reads:</p>`},
+        description: `<p>The A-bomb exploded 500 metres above this point.</p>`},
     {position: [ 32.772608504822784, 129.86456629471718 ],
         title: "Nagasaki Atomic Bomb Memorial",
-        description: `<p>part of the learning zone</p>`},
+        description: `<p>Photographs, lectures, videos, and documentaries are available here for the purposes of education.</p>`},
     {position: [ 32.7724994228233, 129.8635187690558 ],
         title: "Nagasaki Korean Atomic Bomb Victims' Memorial",
         icon: mysteryIcon,
-        description: `<p>Erected August 1976</p>`},
-    ];
+        description: `<p>Erected in August 1976. The inscription reads: "For Koreans and their families who died during heavy labor due to forced entrainment and recruitment."</p>`},
+    {position: [ 32.775977516264064, 129.8633015837938 ],
+        title: "Monument of People's Friendship",
+        description: `<p>Donated by the former German Democratic Republic.</p>`},
+      ];
 
 
 let nagasakiMarkers = processMarkerLayer(nagasakipeacepark,
@@ -165,7 +172,7 @@ const parksData={
 "features": [
   {
     "type": "Feature",
-      "properties": {myColor: HirParkCol, title: "Hiroshima Peace Park Memorial", description: "Established in " },
+      "properties": {myColor: HirParkCol, title: "Hiroshima Peace Memorial Park", description: "Established April 1, 1954." },
     "geometry": {
       "type": "Polygon",
       "coordinates": [
@@ -252,7 +259,7 @@ const parksData={
   },
   {
     "type": "Feature",
-      "properties": {myColor: NagParkCol, title: "Nagasaki Peace Park: Wish Zone", description: "Established "},
+      "properties": {myColor: NagParkCol, title: "Nagasaki Peace Park: Wish Zone", description: "Established April 1, 1955. "},
     "geometry": {
       "type": "Polygon",
       "coordinates": [
@@ -379,7 +386,7 @@ const parksData={
   },
   {
     "type": "Feature",
-    "properties": {myColor: NagParkCol, title: "Nagasaki Peace Park: Prayer Zone", description: "Established "},
+    "properties": {myColor: NagParkCol, title: "Nagasaki Peace Park: Prayer Zone", description: "Includes the Peace Symbols Zone which is made up of donated monuments. "},
     "geometry": {
       "type": "Polygon",
       "coordinates": [
@@ -462,41 +469,25 @@ const parksData={
   },
   {
     "type": "Feature",
-    "properties": {myColor: NagParkCol, title: "Nagasaki Peace Park: Learning Zone", description: "Established ",
+    "properties": {myColor: NagParkCol, title: "Nagasaki Peace Park: Learning Zone", description: "With the goal to educate for generations to come, the history of the atomic bombing of Nagsaki and the dangers of nuclear weapons."},
     "geometry": {
       "type": "Polygon",
       "coordinates": [
         [
           [
-            129.86532390117645,
-            32.77317578773447
-          ],
-          [
-            129.86471235752106,
-            32.773198340284765
-          ],
-          [
-            129.86444413661957,
-            32.77312166159046
-          ],
-          [
             129.86411154270172,
-            32.77321638232088
+            32.77314421415447
           ],
           [
-            129.86407935619354,
-            32.77229172326017
+            129.8640739917755,
+            32.772309765480095
           ],
           [
-            129.86428320407867,
+            129.86429929733276,
             32.771863219462325
           ],
           [
-            129.8646640777588,
-            32.7718947934968
-          ],
-          [
-            129.86472845077515,
+            129.8646479845047,
             32.77189930407222
           ],
           [
@@ -504,15 +495,26 @@ const parksData={
             32.771836155995324
           ],
           [
-            129.86532390117645,
-            32.77317578773447
+            129.8653346300125,
+            32.773184808755275
+          ],
+          [
+            129.8647177219391,
+            32.77320285079414
+          ],
+          [
+            129.86462116241455,
+            32.77311715107697
+          ],
+          [
+            129.86411154270172,
+            32.77314421415447
           ]
         ]
       ]
     }
   }
-}
-]
+]    
 };
 let parks = processJSONLayer(parksData)
 
@@ -560,36 +562,135 @@ let nagasakihypo = L.circle([ 32.77373031623168, 129.86322281575983 ], {
 //});
 
 let hypocenters = processManualLayers([nagasakihypo, hiroshimahypo],
-                                 {description: 'Important Locations'});
+                                 {description: 'Hypocenters'});
 
 
 
 
 // Polyline Objects and Layer Group ("paths")
-let vanishingPath = L.polyline([[51.37178037591737, -0.2197265625],
-                                [55.36857598381045, -1.7512893676757812],
-                                [55.48997247517858,-1.5944015979766843 ]], {
-                                    color: HirCol,
+let hirPath = L.polyline( [
+  [
+    34.391506147834804,
+    132.45197653770447
+  ],
+  [
+    34.391532708048416,
+    132.4531352519989
+  ],
+  [
+    34.39182486984179,
+    132.45211601257324
+  ],
+  [
+    34.39281644165799,
+    132.45251297950745
+  ],
+  [
+    34.39310859897056,
+    132.45319962501526
+  ],
+  [
+    34.39395850535416,
+    132.45309233665466
+  ],
+  [
+    34.39423295244714,
+    132.45402574539185
+  ],
+  [
+    34.39504743529558,
+    132.4537467956543
+  ]
+], {
+                                    color: 'blue',
                                     weight: 6,
-                                    title: 'DeathEaters Travel',
-                                    windowContent: `<h3>Line of Travel for Deatheaters</h3><p>From the twin Vanishing Cabinet, the Deatheraters can travel directly from Bourquin and Burkes</p>`})
+                                    title: 'Path along the Hiroshima Memorial',
+                                    windowContent: `<h3>A Possible Path</h3><p>Starting from the south of the park, moving towards the A-bomb Dome.</p>`})
 
 
-let nagasakiPath = L.polyline([[129.8624002933502,32.77451539930909],[129.86393988132477,32.77692845345556],[129.86253440380096,32.77408239575314],
-  [ 129.86359655857086, 32.77451539930909],[129.86343026161194,32.77378019410646 ],[129.86308157444,32.77365841106322],[129.8632961511612,32.77287809353503],
-  [ 129.8636555671692,32.77263452481303],[129.86442267894745,32.77262550373645],[129.86500203609467,32.77211581142437]], {
-                                    color: NagCol,
+let nagasakiPath = L.polyline([
+  [
+    32.77451990975169,
+    129.8624002933502
+  ],
+  [
+    32.77530472328714,
+    129.86299574375153
+  ],
+  [
+    32.77549416000011,
+    129.86288309097287
+  ],
+  [
+    32.77670293714836,
+    129.86377894878387
+  ],
+  [
+    32.7755257327464,
+    129.863623380661
+  ],
+  [
+    32.77587754259007,
+    129.86404716968536
+  ],
+  [
+    32.77578282469204,
+    129.86414909362793
+  ],
+  [
+    32.77536786890293,
+    129.86384332180023
+  ],
+  [
+    32.77457854548496,
+    129.86368238925934
+  ],
+  [
+    32.77448833664857,
+    129.86355900764465
+  ],
+  [
+    32.77379372554542,
+    129.86346781253815
+  ],
+  [
+    32.77365841106322,
+    129.86304938793182
+  ],
+  [
+    32.77288711458601,
+    129.86326932907104
+  ],
+  [
+    32.772760819789134,
+    129.86341953277588
+  ],
+  [
+    32.772733756595045,
+    129.86400425434113
+  ],
+  [
+    32.77274728819311,
+    129.86498057842255
+  ],
+  [
+    32.772097769165136,
+    129.8650074005127
+  ]
+]
+, {
+                                    color: 'blue',
                                     weight: 6,
                                     title: 'Path along the Nagasaki Memorial',
-                                    windowContent: `<h3></p>`})
+                                    windowContent: `<h3>A Possible Path</h3><p>Passing through the Wish Zone, Prayer Zone, and Learning Zone.</p>`})
 
-let horcruxPath = L.polyline([[55.49058639152367,-1.5951092937469482],
-                              [55.61679475360749,-1.6392910480499268]], {
-                                  color: NagCol,
-                                  weight: 4,
-                                  title: 'Return from Horcrux quest',
-                                  windowContent: `<h3>Return Disapparation from Failed Horcrux quest</h3><p>Exhaisted and grieviously injured, Dumbledore returns to find the trap he had so long expected has been sprung.</p>`})
-let paths = processManualLayers([vanishingPath, nagasakiPath, horcruxPath], {description: 'Paths'})
+//let horcruxPath = L.polyline([[55.49058639152367,-1.5951092937469482],
+                              //[55.61679475360749,-1.6392910480499268]], {
+                                  //color: NagCol,
+                                  //weight: 4,
+                                  //title: 'Return from Horcrux quest',
+                                  //windowContent: `<h3>Return Disapparation from Failed Horcrux quest</h3><p>Exhaisted and grieviously injured, Dumbledore returns to find the trap he had so long expected has been sprung.</p>`})
+let paths = processManualLayers([hirPath, nagasakiPath], {description: 'Paths'})
 
 
 ////////////////////////////////////////////////
