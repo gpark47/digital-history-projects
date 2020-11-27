@@ -106,11 +106,11 @@ let hiroshimapeacepark =
          title: "Children's Peace Monument", 
          description: '<p>In memory of the death of innocent children.</p>'},
          {position: [ 34.39428475593624, 132.4518720636231 ],
-            title: "Korean Atomic Bomb Victims Memorial",
+            title: "Korean Atomic Bomb Victims' Memorial",
             icon: mysteryIcon,
             description: '<p>Moved to this location in 1990.</p>'},
         {position: [ 34.394513607625484, 132.4498207777244 ],
-            title: "Former location of the Korean Atomic Bomb Victims Memorial",
+            title: "Former location of the Korean Atomic Bomb Victims' Memorial",
             icon: mysteryIcon,
             description: '<p>Constructed on April 10, 1970.</p>'},   
         {position: [ 34.39547749360947, 132.45356903941789 ],
@@ -127,7 +127,7 @@ let hiroshimapeacepark =
     [
       {position: [ 32.77692958103568, 129.8639428988099 ],
       title: "Peace Statue",
-      description: "<p>Inscription from the sculptor Seibo Kitamura: 'The right hand shows the atomic bomb, the left hand prays for peace, and the face prays for the souls of the war victims.'</p>"
+      description: '<p>Inscription from the sculptor Seibo Kitamura: "The right hand shows the atomic bomb, the left hand prays for peace, and the face prays for the souls of the war victims."</p>'
      },
      {position: [ 32.775444545661884, 129.86305609345436 ],
         title: "Fountain of Peace",
@@ -141,17 +141,17 @@ let hiroshimapeacepark =
     {position: [ 32.7724994228233, 129.8635187690558 ],
         title: "Nagasaki Korean Atomic Bomb Victims' Memorial",
         icon: mysteryIcon,
-        description: `<p>Erected in August 1976. The inscription reads: "For Koreans and their families who died during heavy labor due to forced entrainment and recruitment."</p>`},
+        description: `<p>Erected in August 1976.</p>`},
     {position: [ 32.775977516264064, 129.8633015837938 ],
         title: "Monument of People's Friendship",
         description: `<p>Donated by the former German Democratic Republic.</p>`},
       ];
 
 
-let nagasakiMarkers = processMarkerLayer(nagasakipeacepark,
-                                     {description: 'Nagasaki Peace Park', defaultIcon: NagIcon}),
-    hiroshimaMarkers = processMarkerLayer(hiroshimapeacepark,
-                                      {description: 'Hiroshima Peace Memorial Park', defaultIcon: HirIcon});
+let  hiroshimaMarkers = processMarkerLayer(hiroshimapeacepark,
+                                      {description: 'Hiroshima Peace Memorial Park', defaultIcon: HirIcon}),
+     nagasakiMarkers = processMarkerLayer(nagasakipeacepark,
+                                      {description: 'Nagasaki Peace Park', defaultIcon: NagIcon});
 
 
 
@@ -386,7 +386,7 @@ const parksData={
   },
   {
     "type": "Feature",
-    "properties": {myColor: NagParkCol, title: "Nagasaki Peace Park: Prayer Zone", description: "Includes the Peace Symbols Zone which is made up of donated monuments. "},
+    "properties": {myColor: NagParkCol, title: "Nagasaki Peace Park: Prayer Zone", description: "The hypocenter monument is surrounded by a design of rings expanding outwards."},
     "geometry": {
       "type": "Polygon",
       "coordinates": [
@@ -469,7 +469,7 @@ const parksData={
   },
   {
     "type": "Feature",
-    "properties": {myColor: NagParkCol, title: "Nagasaki Peace Park: Learning Zone", description: "With the goal to educate for generations to come, the history of the atomic bombing of Nagsaki and the dangers of nuclear weapons."},
+    "properties": {myColor: NagParkCol, title: "Nagasaki Peace Park: Learning Zone", description: "To educate on the history of the atomic bombing of Nagsaki and the dangers of nuclear weapons."},
     "geometry": {
       "type": "Polygon",
       "coordinates": [
@@ -535,7 +535,7 @@ let hiroshimahypo = L.circle([ 34.39464724174592, 132.45479192752794 ], {
     fillColor: HirCol,
     fillOpacity: 0.10,
     title: 'Hiroshima\'s Hypocenter',
-    windowContent: `<h3>Hiroshima\'s Hypocenter</h3><p>Location of impact</p3>`
+    windowContent: `<h3>Hiroshima\'s Hypocenter</h3><p>Location of impact.</p3>`
 });
 
 let nagasakihypo = L.circle([ 32.77373031623168, 129.86322281575983 ], {
@@ -545,7 +545,7 @@ let nagasakihypo = L.circle([ 32.77373031623168, 129.86322281575983 ], {
   fillColor: NagCol,
   fillOpacity: 0.10,
   title: 'Nagasaki\'s Hypocenter',
-  windowContent: `<h3>Nagasaki Hypocenter</h3><p>Location of Impact</p3>`
+  windowContent: `<h3>Nagasaki\'s Hypocenter</h3><p>Location of Impact.</p3>`
 });
 
 
@@ -561,7 +561,7 @@ let nagasakihypo = L.circle([ 32.77373031623168, 129.86322281575983 ], {
    // windowContent: `<h3></p>`
 //});
 
-let hypocenters = processManualLayers([nagasakihypo, hiroshimahypo],
+let hypocenters = processManualLayers([hiroshimahypo, nagasakihypo],
                                  {description: 'Hypocenters'});
 
 

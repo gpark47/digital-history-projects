@@ -9,10 +9,9 @@
 
 section#intro {
     grid-area: intro;
-    background-color: var(--color-highlight1);
+    background-color: rgb(220, 224, 255);
     border: 1px solid var(--color-custom-borders);
     overflow-y: scroll;
-    
 }
 
 
@@ -25,14 +24,15 @@ section#map_canvas {
 
 section#legend {
     grid-area: legend;
-    background-color: var(--color-highlight2);
+    background-color: rgb(195, 221, 255) ;
     border: 1px solid var(--color-custom-borders);
     overflow-y: scroll;
+    scrollbar-darkshadow-color: rgb(224, 224, 224);
 }
 
 section#maintext {
     grid-area: main;
-    background-color: var(--color-highlight1);
+    background-color: rgb(220, 224, 255);
     border: 1px solid var(--color-custom-borders);
     overflow-y: auto;
 }
@@ -41,7 +41,7 @@ section#maintext {
 /* arrange the legend elements using flexbox (just for fun) */
 div#map_legend {
     width: 100%;
-    display: grid;
+    display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     overflow-y: auto;
@@ -58,12 +58,13 @@ div#map_legend {
 }
 
 div#map_legend div.pointer {
-    border: 1px black solid;
+    border: 1px rgb(0, 0, 0) solid;
     border-radius: 10px;
     margin: 2px 5px 2px 5px;
     /* flex-basis: 500px; */
     cursor:pointer;
     padding: 2px 2px 2px 5px;
+    background-color: rgb(2, 1, 102);
 }
 
 div.pointer h1 {
@@ -77,13 +78,18 @@ div.pointer img {
     margin: 5px;
 }
 
+div.pointer {
+    color: rgb(224, 224, 224);
+}
+
 /* Leaflet Popups crate 2 divs each: div.leaflet-popup-content-wrapper and 
    div.leaflet-popup-content. You can ddress them as you like.*/
 div.leaflet-popup-content {
-    border: 2px rgb(143, 143, 143) solid;
-    padding: 8px;
-    border-radius: 5px;
-    background-color: rgb(163, 163, 163) solid;
+    border: 0px;
+    padding-top: 5px;
+    padding-right: 8px;
+    padding-bottom: 5px;
+    padding-left: 8px;
 }
 
 div.leaflet-popup-content img {
@@ -92,9 +98,25 @@ div.leaflet-popup-content img {
 }
 
 div.leaflet-popup-content-wrapper {
-    background-color: rgb(163, 163, 163) solid;
+    
 }
 
+div.leaflet-popup-content h2 {
+    font-weight: bold;
+    font-size: 1.5em;
+    
+}
+div.leaflet-popup-content h3 {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+div.leaflet-popup-content p {
+    margin: 5px 0;
+    margin-top: 5px;
+    margin-right: 0px;
+    margin-bottom: 5px;
+    margin-left: 0px; 
+}
 @media only screen and (max-width:1200px) {
     .main-container {
         grid-template-areas: "intro intro" "map legend" "main main";
@@ -130,7 +152,6 @@ div#map_legend h1 {
     background-color: rgb(204, 204, 204);
     font-style: normal;
     text-align: center;
-    font-family: 'Trebuchet MS';
 }
 
 div#map_legend h3 {
@@ -167,7 +188,7 @@ button#reset {
 div#map_canvas h1 {
     font-style: italic;
     text-align: center;
-    font-family: 'Trebuchet MS'
+   
 
 }
 
@@ -176,7 +197,20 @@ div.address  {
 }
 
 div.description {
+}
 
+.footnotes-list {
+    color: rgb(2, 1, 102);
+}
+.footnote-item {
+    color: rgb(2, 1, 102);
+}
+.footnote-backref {
+    color: rgb(2, 1, 102);
+}
+
+a {
+    color: rgb(61, 112, 221);
 }
 
 div.gm-style-iw {
