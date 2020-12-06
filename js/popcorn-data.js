@@ -31,14 +31,14 @@ var loadPopcorn = function () {
   // this event, which is the first one you see, is a little more complicated,
   // because it is running a complex plugin: google maps.
   pop.googlemap({     // run the googlemap plugin; note the open paren followed by open bracket
-    "start":0,   // what time, IN SECONDS, to start showing this information 
-    "end":30,     // what time to stop
+    "start":4,   // what time, IN SECONDS, to start showing this information 
+    "end":17,     // what time to stop
     "target":"popcorn-container", // where to display -- don't forget this!
     type: "HYBRID", //HYBRID (default), ROADMAP, SATELLITE, TERRAIN, STREETVIEW,
-    //lat: 43.665429,
-    //lng: -79.403323,
-    location: "Verrazano-Narrows bridge", //  The location we want our map to display at
-    zoom: 15 // Setting the zoom that we would like 
+    lat: 35.493041,
+    lng: -77.859262,
+    location: "Goldsboro, North Carolina", //  The location we want our map to display at
+    zoom: 5 // Setting the zoom that we would like 
   });  // don't forget to close your brackets
 
   // this uses the Wikipedia plugin

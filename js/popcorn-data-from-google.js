@@ -27,7 +27,8 @@ var loadPopcorn = function(){
     // It's very important, though, to keep the same column headers as in our example spreadsheet:
     // https://docs.google.com/spreadsheets/d/1pL_Lj62_ZcW7iawTCQ_5BQsmdynCtC8y5BCNy3k2LOM/
   //  let public_spreadsheet_key = 'https://docs.google.com/spreadsheets/d/1pL_Lj62_ZcW7iawTCQ_5BQsmdynCtC8y5BCNy3k2LOM/pubhtml?gid=0&single=true';
-  let public_spreadsheet_key = 'https://docs.google.com/spreadsheets/d/1pL_Lj62_ZcW7iawTCQ_5BQsmdynCtC8y5BCNy3k2LOM/edit?usp=sharing';
+  //let public_spreadsheet_key = 'https://docs.google.com/spreadsheets/d/1pL_Lj62_ZcW7iawTCQ_5BQsmdynCtC8y5BCNy3k2LOM/edit?usp=sharing';
+  let public_spreadsheet_key = 'https://docs.google.com/spreadsheets/d/1bo-HvQFCBufVNfT18R7g8QFQxO0gOgSzfydhiHQiL-M/edit?usp=sharing';
     // now we are going to use the tabletop.js library, which was called in our 
     // HTML file, to grab the date from the spreadsheet and process it so that 
     // popcorn can use it.  
