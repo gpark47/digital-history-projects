@@ -11,12 +11,14 @@
     grid-template-areas: "intro popcorn" "main main";
     grid-auto-columns: 1fr;
     grid-template-rows: 50vh 1fr;
+    overflow-y: scroll;
 }
 
 section#intro {
     grid-area: intro;
     background-color: var(--color-highlight1);
     border: 1px solid var(--color-custom-borders);
+    overflow-y: scroll;
 }
 
 /* popcorn event container: 
