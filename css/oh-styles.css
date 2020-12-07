@@ -18,7 +18,7 @@ section#intro {
     grid-area: intro;
     border: 1px solid var(--color-custom-borders);
     overflow-y: scroll;
-    background-color: rgb(254, 255, 214);
+    background-color: rgb(230, 227, 208);
 }
 
 /* popcorn event container: 
@@ -27,10 +27,11 @@ section#intro {
    - overflow-y scroll so we don't overwrite other elements
    - don't grow too big
  */
+ /*border: 1px solid var(--color-custom-borders)*/
+
 aside#popcorn-container {
     grid-area: popcorn;
-    background-color: var(--color-highlight2);
-    border: 1px solid var(--color-custom-borders);
+    background-color: rgb(196, 196, 196);
     display: flex;
     flex-direction: row;
     overflow-y: scroll;
@@ -67,7 +68,11 @@ aside#popcorn-container > * {
 section#maintext {
     grid-area: main;
     border: 1px solid var(--color-custom-borders);
-    background-color: rgb(254, 255, 214);
+    background-color:rgb(230, 227, 208);
+}
+
+a {
+    color: rgb(49, 55, 70);
 }
 
 
