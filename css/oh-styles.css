@@ -72,9 +72,14 @@ section#maintext {
 }
 
 a {
-    color: rgb(49, 55, 70);
+    color: rgb(78, 108, 184);
 }
 
+.webpage-plugin {
+    min-width: 100%;
+    min-height: 100%;
+    display: flex;
+}
 
 @media only screen and (max-width:1199px) {
     .main-container {
