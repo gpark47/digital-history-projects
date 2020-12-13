@@ -1,4 +1,4 @@
-# History and Memory: The Process of Memorialization
+# A Collection of Digital History Projects 
 
 Hello! My name is Grace Park and I am a student in HIS393: Digital History with Professor Matt Price! 
 
