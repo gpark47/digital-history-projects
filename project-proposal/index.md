@@ -40,6 +40,8 @@ By the end of one year, there will be a table that organized the time period of 
 
 <h2>Timeline and Budget</h2>
 
+The CD-ROM discs can be acquired from the Cheng Yu Tung East Asian Library at any time. Therefore, this project can start immediately after recieving funding (even during the COVID-19 pandemic). The first stage of transferring PDF files from the discs to Dropbox can be done using library computers or at home by the RAs. Because the project can start at any time, there are no specific months listed in this timeline.
+
 | Task                                  | Notes                                                                                                                                                                                                                                       | Time       | Total Time Past |
 |---------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------|-----------------|
 | Hiring Research Assistants (RA)       | It will be the utmost priority to hire well suited research assistants for this project. A total of 5 RAs must be hired. A minimum of two must have Korean reading proficiency, and a minimum of one must have Chinese reading proficiency. | 2-3 weeks  | 1 month         |
@@ -68,6 +70,7 @@ This leads to the last key goal of this Digital History Project. It is asking th
 
 >Craig Mackie states that: 
 >>“[D]uality in the formulation of Korean ‘nationness,’ the separation of ‘Korea’ into a ‘North’ Korea and a ‘South’ Korea, can never be forgotten in any discussion of the Korean national consciousness.”^[[Craig Mackie, “Familial communism and cartoons: An affective political economy of North Korea,” in The Political Economy of Affect and Emotion in East Asia, ed. Jie Yang, 223 (New York: Routledge, 2014).](http://go.utlib.ca/cat/9865179)]
+
 Ultimately, it is important to return back to the first goal of this project again which is to emphasize the spatial history of North Korea in grappling with division. It should be reworded to say that this project deals with the spatial history of the Korean peninsula (not just North Korea). As Mackie states, this constant comparison of North Korea and South Korea to each other and to the rest of the world, leaves each country in a tension of identity. By stating that South Korea exists, North Korea legitimizes itself as the ‘proper’ Korea while also creating an identity based on the existence against the South. This adds to another layer of critically thinking about how political cartoons approached South Korea over the course of a nearly two decades. 
 
 Newspapers are a valuable primary source to track these changes. Political cartoons especially, provide layers of analysis in these processes of mediation. To summarize, this Digital History Project is important because
