@@ -1,6 +1,6 @@
 <img src="https://i.imgur.com/uNaKlFL.png"
      alt="Nodong Sinmun Title"
-     style="float: centre; margin: 10px; width: 50%;" />
+     style="float: left; margin: 10px; width: 40%;" />
 
 For the grant, I propose a digital history project on political cartoons from the North Korean government newspaper *Nodong Sinmun*. To note, Sinmun translates to newspaper. The *Nodong Sinmun*, has been the central state newspaper of North Korea since November 1945 to the present day.^[Zhan] It is a  daily publication that usually issues 6 pages, or 10 pages for special issues.^[Zhan] The newspapers’ publications are available at the Cheng Yu Tung East Asian Library, University of Toronto <a href=https://search.library.utoronto.ca/details?8534947>on physical disc drives</a>. I propose that the political cartoons from this resource be scanned, published online, and historicized for public access. There are several goals to this digitization of content from the Nodong Sinmun. First, there is an increase of accessibility of the *Nodong Sinmun*’s older publications. The online availability is well suited for researchers as well as the public, rather than being only available on physical disc drives. Second, political cartoons provide a way of resituating North Korea to the world. This is especially important for the 1950s and 1960s because it was immediately after the division of the Korean peninsula (1945 division, 1947 elections, 1953 end of the Korean War). Third, the division of the Korean peninsula in this immediate post-division period can be spatially presented through digital history. Lastly, this leads to analyzing how North Korea’s sense of self was implicated through its comparatives with the rest of the world and South Korea. The project will seek to better show how the division of North Korea and South Korea appeared as arbitrary and undefined immediately after division of the peninsula.
 
@@ -13,3 +13,4 @@ The story of this division introduces how this initial division was an arbitrary
 
 > “[T]he inter-Korean border sets both the spatial proximity of two neighbour Korean states (formerly unified people or <a href=https://en.wikipedia.org/wiki/Korean_ethnic_nationalism>*minjok*</a> of the peninsula) and the tremendous political and economical distance of two societies parted by over 50 years of division.”
 > - Valérie Gelézeau^[Valérie Gelézeau, “Beyond the 'Long Partition'. From Divisive Geographies of Korea to the Korean 'Meta-Culture',” European Journal of East Asian Studies 9, no. 1 (2010): 6, www.jstor.org/stable/23615261.]
+
