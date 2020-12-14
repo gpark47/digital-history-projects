@@ -17,8 +17,8 @@ section.main{
     grid-area: main;
     margin-left: 50px;
     margin-right: 50px;
-    margin-bottom:20px
-
+    margin-bottom:20px;
+    background-color: rgb(136, 197, 255);
 }
 
 section#maintext {
@@ -28,7 +28,16 @@ section#maintext {
     overflow-y: auto;
 }
 
+img {
+    flex-wrap: wrap;
+    padding-bottom:10px;
+}
+
 table, th, td {
     border: 1px solid black;
     float: center;
   }
+
+a {
+    color: rgb(78, 108, 184);
+}
