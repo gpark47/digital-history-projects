@@ -1,19 +1,27 @@
 # Political Cartoons of the *Nodong Sinmun*: North Korea's Relation to the World
 
+<h2>Methods</h2>
 
-Put your proposal here. Include supporting materials such as mockups, graphs, historical photos, etc.; make sure any images or other assets are available on the web, either in your repository or at a publicly-available URL.  
+There are several methodical components that must be completed. To begin the project, the Nodong Sinmun files will be acquired from the Chen Yu Tan East Asian Library. All of the files will be transferred to Dropbox so that RAs have access to the riles without the disc itself. Each publication is a PDF file on the disc therefore they are easy to upload onto Dropbox for easy access and dissemination. The RAs will have to go through each publication and check if there was a political cartoon issued. The RAs will compile these PDFs into a separate folder on Dropbox to access later. With 5 RAs, this process of initially sifting through the documents will take approximately 2-3 weeks. As this process is going forward, it will be the job for the RAs with Korean and Chinese reading abilities to translate the political cartoons and make note of any important accompanying articles. If an accompanying article is directly related to the cartoon (which, in most cases they are), the section will be translated as well. These translations will be double checked for accuracy as well as relevance. Because of the North Korean dialect, there may be challenges and a slower pace in which the articles are translated. This will be an ongoing process and will likely take 4-5 months to complete fully. Additional months may be needed to refine the translations that will be published for the public.
+
+The other RAs will simultaneously begin doing historical research related to the political cartoons and accompanying articles. These events can range diplomatic meetings, political affairs, reports on South Korea, or reports on the United States; all in all, the contents range from domestic to international therefore it will vary. This process will take the longest and is unpredictable. Many historical connections can be made therefore it will also vary on the RAs area of knowledge to engage and make connections. The RAs will produce pieces of writing on the historical context about the political cartoon and accompanying articles in a range of 100-1000 words; these will be used in the Digital History project. There is a large range because domestic events may have little to no information available on them. However, there is an opportunity for analysis on the lack of information available here. In contrast, global affairs may have a plethora. This process of historical research will likely take 6-7 months to complete. 
+The remaining 4-5 months will be dedicated to refinement and digitization. The refinement refers to the historical context writing pieces written by RAs that are about a political cartoon. The digitization process has two key parts. 
+
+First, the HTML and CSS must be written for the website. The main page will include a table where RAs will enter information. This key information will appear as:
+with date of publication, keywords related to the cartoon, artist name, title (if no title, a description), key locations related to cartoon, and notes:
+
+| Date of Publication | Keywords                                 | Artist  | Title or Description                      | Location            | Notes                                        | Link |
+|---------------------|------------------------------------------|---------|-------------------------------------------|---------------------|----------------------------------------------|------|
+| December 6, 1957    | US-Korea Relations, Rhee Syngman, School | Unknown | "You even need money for report cards..." | *Dongdaemun Market* | Accompanying article criticizes Rhee Syngman | Here |
 
 
+Second, if a publication is clicked on, it will redirect the user to the cartoon’s individual webpage which includes: Image of the cartoon, image of the entire newspaper page, translation, and historical analysis, a leaflet map with mentioned locations.
 
 
+By the end of one year, there will be a table that organized the time period of Nodong Sinmun’s political cartoons. Each cartoon will have its own page with historical context, images, and a leaflet map. The usage of a leaflet map is an important part of the Digital History project. The dynamic, interactive leaflet map allows the user to engage with the Korean peninsula spatially. This removes static frames around what areas are a part of the conversation around North Korea. Importantly, the leaflet map will limit the amount of present-day information (e.g., roads, points of interest) because it is presenting the 1950s and 1960s. It also reinforces the idea that the division between North Korea and South Korea is one that must be approached critically. The divided developments of today cannot be projected onto a map of the past. In addition, spatial history integrates North Korea in connection with the world, rather than prescribe a sense of isolation onto them, especially in a period immediately following division. 
 
 
-
-
-
-
-
-<h2>Timeline</h2>
+<h2>Timeline and Budget</h2>
 
 | Task                                  | Notes                                                                                                                                                                                                                                       | Time       | Total Time Past |
 |---------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------|-----------------|
@@ -24,3 +32,8 @@ Put your proposal here. Include supporting materials such as mockups, graphs, hi
 | Research                              | The amount of information available will vary on the content. Therefore, there will be some cartoons with a lot of research needed while others will only need a brief overview. This will occur simultaneously as the previous step.       | 6-7 months | 7-9 months      |
 | Digital Formatting                    | Uploading newspaper articles and images online. Formatting figures with accompanying historical context. Configuring leaflet.                                                                                                               | 4-5 months | 10-12 months    |
 | Refinement                            | CSS editing.                                                                                                                                                                                                                                | 2 weeks    | 12 months       |
+
+<a href="https://docs.google.com/spreadsheets/d/1_tizjoyZBhBofgn5tRAt5FFTjNbn7i37sfD9jtKSgm4/edit?usp=sharing">Link to Spreadsheet of Budget (All costs are an estimate) </a>
+
+
+<h2>Why should this project be funded?</h2>
