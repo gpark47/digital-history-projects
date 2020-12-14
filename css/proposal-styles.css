@@ -41,3 +41,9 @@ table, th, td {
 a {
     color: rgb(78, 108, 184);
 }
+
+.map {
+    display: wrap;
+    margin-left: auto;
+    margin-right: auto;
+}
