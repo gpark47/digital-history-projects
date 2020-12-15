@@ -36,6 +36,7 @@ Second, if a publication is clicked on at 'here', it will redirect the user to t
 
 By the end of approximately 1.5 years, there will be a table that has organized *Nodong Sinmun*’s political cartoons from 1957-1969. Each cartoon will have its own page with historical context, images, and a leaflet map. The usage of a leaflet map is an important part of the Digital History project. The dynamic, interactive leaflet map allows the user to engage with the Korean peninsula spatially. This removes static frames around what areas are a part of the conversation around North Korea. Importantly, the leaflet map will limit the amount of present-day information (e.g., roads, points of interest) because it is presenting the 1950s and 1960s. It also reinforces the idea that the division between North Korea and South Korea is one that must be approached critically. The divided developments of today cannot be projected onto a map of the past. In addition, spatial history integrates North Korea in connection with the world, rather than prescribe a sense of isolation onto them, especially in a period immediately following division. 
 
+This online website will be available for public access.
 
 <h2>Timeline</h2>
 
@@ -52,7 +53,7 @@ The CD-ROM discs can be acquired from the Cheng Yu Tung East Asian Library at an
 | Refinement                            | CSS editing. Writing editing. This will occur simultaneously as the previous step.                                                                                                                                                                                                                             | 8 weeks / 2 months    | 18 months      |
 
 <h2>Budget</h2>
-There is no noteable expenses that are required for this project (e.g., travel). The funding will go to RA wages because this is a research and labour intensive process. Online work through Dropbox will not require additional costs. 
+There is no noteable expenses that are required for this project (e.g., travel). The funding for this project is justified because it will go to RA wages. The RAs are involved in a research and labour intensive process. Online work through Dropbox will not require additional costs. 
 
 | Pay   | Weekly Hours | Description               | Weekly Costs                   | Total Budget Costs                                                        |
 |-------|--------------|---------------------------|--------------------------------|---------------------------------------------------------------------------|
