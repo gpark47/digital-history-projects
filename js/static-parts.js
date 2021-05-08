@@ -14,7 +14,7 @@ let menuEntries = [
 
 
 let authorName='Grace Park',
-    footerHtml=`HTML projects by ${authorName}, originally written for <a href="https://digitalhistory.github.io/dh-website/">HIS393: Digital History</a>`;
+    footerHtml=`HTML projects by ${authorName}, originally written for <a href="https://digitalhistory.github.io">HIS393: Digital History</a>`;
 
 
 function makeMenu (items= menuEntries) {
