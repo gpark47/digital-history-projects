@@ -1,4 +1,4 @@
-<img src="https://i.imgur.com/uNaKlFL.png"
+<img src="/assets/nodong-sinmun.PNG"
      alt="Nodong Sinmun Title"
      style="float: left; margin: 10px; width: 40%;" />
 

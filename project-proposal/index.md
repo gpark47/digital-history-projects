@@ -23,11 +23,11 @@ First, the HTML and CSS must be written for the website. The main page will incl
 |---------------------|------------------------------------------|---------|-------------------------------------------|---------------------|----------------------------------------------|------|
 | December 6, 1957    | US-Korea Relations, Rhee Syngman, School | Unknown | "You even need money for a report card..." | *Dongdaemun Market* | Accompanying article criticizes Rhee Syngman | Here |
 
-<img src="/_pages/assets/nodong-cartoon.PNG"
+<img src="/assets/nodong-cartoon.PNG"
      alt="Nodong Sinmun Dec 6 Cartoon"
      style="float: right; margin: 10px; height: 30%; width: 35%; size: 30%" />
 
-<img src="/_pages/assets/nodong-context.PNG"
+<img src="/assets/nodong-context.PNG"
      alt="Nodong Sinmun Dec 6 Article"
      style="float: left; margin: 10px; height: 50%; width: 60%; size: 80%" />
      
