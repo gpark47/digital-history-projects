@@ -5,11 +5,11 @@ let menuEntries = [
   {text: "Home",
    link: 'index.html'},
   {text: 'Oral History',
-   link: 'oral-history/index.html'},
+   link: '/digital-history-projects/oral-history/index.html'},
   {text: 'Mapping',
-   link: 'spatial-history/index.html'},
+   link: '/digital-history-projects/spatial-history/index.html'},
   {text: 'Proposal',
-   link: 'project-proposal/index.html'}
+   link: '/digital-history-projects/project-proposal/index.html'}
 ];
 
 
