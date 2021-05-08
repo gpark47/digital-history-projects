@@ -3,13 +3,13 @@
 
 let menuEntries = [
   {text: "Home",
-   link: 'index.html'},
+   link: 'digital-history-projects/'},
   {text: 'Oral History',
-   link: '/digital-history-projects/oral-history/index.html'},
+   link: 'digital-history-projects/oral-history/index.html'},
   {text: 'Mapping',
-   link: '/digital-history-projects/spatial-history/index.html'},
+   link: 'digital-history-projects/spatial-history/index.html'},
   {text: 'Proposal',
-   link: '/digital-history-projects/project-proposal/index.html'}
+   link: 'digital-history-projects/project-proposal/index.html'}
 ];
 
 
