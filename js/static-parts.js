@@ -25,9 +25,9 @@ function makeMenu (items= menuEntries) {
     // console.log("checking location");
     // console.log(basedir);
     // console.log(window.location.pathname)
-    if (! (basedir === 'digital-history-projects' || basedir === "")) {
-    prefix = '../';
-  }
+    //if (! (basedir === 'digital-history-projects' || basedir === "")) {
+   // prefix = '../';
+  
   for (let i of items) {
     html += `<a href="${prefix}${i.link}">${i.text}</a>`;
   }
