@@ -25,8 +25,8 @@
 
 // map initialization variables
 let projectMap, // this will hold the map once it's initialized
-    myCenter = [ 52.90024141178471, -1.2631566904279536 ], // [ 55.4907, -1.594], // *latitude*, then longitude
-    myZoom = 6; // set your preferred zoom here. higher number is closer in.
+    myCenter =  [ 33.10939131944678, 131.50954309381356 ], // [ 55.4907, -1.594], // *latitude*, then longitude
+    myZoom = 7; // set your preferred zoom here. higher number is closer in.
                 // I set the zoom wide to give access to context before zooming in
 
 
@@ -51,17 +51,17 @@ const myIconClass = L.Icon.extend({
     }});
 // create the new icon types -- cf. https://leafletjs.com/examples/custom-icons/ and
 // also https://leafletjs.com/reference-1.5.0.html#icon
-const gryfIcon = new myIconClass({iconUrl: yellowURL}),
-      slythIcon = new myIconClass({iconUrl: greenURL}),
+const NagIcon = new myIconClass({iconUrl: yellowURL}),
+      HirIcon = new myIconClass({iconUrl: greenURL}),
       mysteryIcon = new myIconClass({iconUrl: greyURL});
 
 
 // storing colors in variables, to make it easier to change all the related features at once
 // you should probably do this too. 
-let gryfCol = 'yellow',
-    slythCol = 'green',
-    hogCol = 'grey',
-    meadeCol = 'rgb(40,40,120)',
+let NagCol = 'yellow',
+    HirCol = 'green',
+    HirParkCol = 'green',
+    NagParkCol = 'yellow',
     towerCol = 'blue';
 
 ///////////////////////////////////////////////////////////////////////
@@ -89,38 +89,69 @@ let gryfCol = 'yellow',
 // These are placeholder arrays; we use them to generate other JS variables
 // that will be more useful to us later on
 // but writing them this way keeps the code as D.R.Y. as possible
-let slythMarkerInfo =
+let hiroshimapeacepark =
     [
-        {position: [55.48997247517858,-1.5944015979766843],
-         title: "Room of Requirement",
-         description: '<p>one half of the Cabinet is located here.</p>'
+        {position: [ 34.39298567151763, 132.45252875707192 ],
+         title: "Cenotaph for the A-bomb Victims",
+         description: '<p>The epitaph reads: "Please rest in peace (yasuraka ni nemutte kudasai), / For we shall not repeat the mistake (ayamachi wa kurikaeshimasenu kara)." .</p>'
         },
-        {position: [55.49058639152367,-1.5940092937469482],
-         title: "Fenrir Greyback",
-         description: `<p>An evil and spiteful werewolf, he thirsts for blood and impatiently awaits Dumbledore's demise.</p>`
+        {position: [ 34.39181370429739, 132.45212742502892 ],
+         title: "Hiroshima Peace Memorial Museum",
+         description: `<p>Composed of exhibits such as: Reality of the Atomic Bombing, The Dangers of Nuclear Weapons, and Hiroshima History.</p>`
         },
-        {position: [55.61679475360749,-1.6392910480499268],
-         title: "Isle of the Locket",
-         description: `<p>A forlorn and terrifying sea cave, guarded by an army of the undead and many other magical protections</p>`},
-        {position: [ 55.49086601004396, -1.5939261297996548 ],
-         title: "Draco Malfoy",
-         description: "<p>Weak-willed, dissatisfied, and a natural bully, Draco Malfoy has nonetheless plotted the murder of his own headmaster.</p>"},
-        {position: [ 55.49046495468512, -1.5939583064545149 ],
-         title: "Severus Snape",
-         icon: mysteryIcon,
-         description: `<p>what drives him? How has he survived so long with so much decption, such intense longing, guilt, and hatred?`}
+        {position: [ 34.39301346805282, 132.45327164607218 ],
+         title: "National Hiroshima Peace Memorial Hall",
+         description: `<p>Opened in 2002 as a space of prayer and reflection.</p>`},
+        {position: [ 34.39413439776468, 132.45277253745488 ],
+         title: "Children's Peace Monument", 
+         description: '<p>In memory of the death of innocent children.</p>'},
+         {position: [ 34.39428475593624, 132.4518720636231 ],
+            title: "Korean Atomic Bomb Victims' Memorial",
+            icon: mysteryIcon,
+            description: '<p>Moved to this location in 1990.</p>'},
+        {position: [ 34.394513607625484, 132.4498207777244 ],
+            title: "Former location of the Korean Atomic Bomb Victims' Memorial",
+            icon: mysteryIcon,
+            description: '<p>Constructed on April 10, 1970.</p>'},   
+        {position: [ 34.39547749360947, 132.45356903941789 ],
+         title: "Atomic Bomb Dome",
+         description: `<p>A UNESCO World Heritage Site. One of the only building structures that was not completely destroyed by the atomic bomb.</p>`},
+         {position: [ 34.3913882257594, 132.45196602158487 ],
+            title: "Prayer Fountain",
+            description: `<p>In memory of those who died while pleading for water.</p>`},
+         {position: [ 34.39348990573147, 132.45269278087534 ],
+            title: "Flame of Peace",
+            description: `<p>This flame has been burning since August 1, 1964.</p>`}
     ],
-    gryfMarkerInfo =
-    [{position: [55.49058639152367,-1.5951092937469482],
-      title: "Dumbledore Lies Dying",
-      description: "<p>Afflicted by a curse for over a year, and gravely weakened by a powerful poison, Dumbledore lies on the ground, barely mobile.</p>"
-     }];
+    nagasakipeacepark =
+    [
+      {position: [ 32.77692958103568, 129.8639428988099 ],
+      title: "Peace Statue",
+      description: '<p>Inscription from the sculptor Seibo Kitamura: "The right hand shows the atomic bomb, the left hand prays for peace, and the face prays for the souls of the war victims."</p>'
+     },
+     {position: [ 32.775444545661884, 129.86305609345436 ],
+        title: "Fountain of Peace",
+        description: `<p>Created in 1969 in memory of the A-bomb victims who died in search for water.</p>`},
+    {position: [ 32.77373219188245, 129.86322358762905 ],
+        title: "Hypocenter Cenotaph",
+        description: `<p>The A-bomb exploded 500 metres above this point.</p>`},
+    {position: [ 32.772608504822784, 129.86456629471718 ],
+        title: "Nagasaki Atomic Bomb Memorial",
+        description: `<p>Photographs, lectures, videos, and documentaries are available here for the purposes of education.</p>`},
+    {position: [ 32.7724994228233, 129.8635187690558 ],
+        title: "Nagasaki Korean Atomic Bomb Victims' Memorial",
+        icon: mysteryIcon,
+        description: `<p>Erected in August 1976.</p>`},
+    {position: [ 32.775977516264064, 129.8633015837938 ],
+        title: "Monument of People's Friendship",
+        description: `<p>Donated by the former German Democratic Republic.</p>`},
+      ];
 
 
-let gryfMarkers = processMarkerLayer(gryfMarkerInfo,
-                                     {description: 'Gryffindor: People and Places', defaultIcon: gryfIcon}),
-    slythMarkers = processMarkerLayer(slythMarkerInfo,
-                                      {description: 'Slytherin: Peple and Places', defaultIcon: slythIcon});
+let  hiroshimaMarkers = processMarkerLayer(hiroshimapeacepark,
+                                      {description: 'Hiroshima Peace Memorial Park', defaultIcon: HirIcon}),
+     nagasakiMarkers = processMarkerLayer(nagasakipeacepark,
+                                      {description: 'Nagasaki Peace Park', defaultIcon: NagIcon});
 
 
 
@@ -135,32 +166,358 @@ let gryfMarkers = processMarkerLayer(gryfMarkerInfo,
 // you can create geoJSON layers here: http://geojson.io/
 // and learn more about the format here: https://en.wikipedia.org/wiki/GeoJSON
 // to set the line and fill color, you will need to set the `myColor` property as below. 
-const townsData={
-    "type": "FeatureCollection",
-    "description": "Magical Municipalities",
-  "features": [
-    {
-      "type": "Feature",
-        "properties": {myColor: hogCol, title: "Hogwarts School", description: "Terrifying events are commonplace here." },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-            [[-1.5929424762725828,55.49200869560172],[-1.5931355953216553,55.491753414035976],[-1.5934574604034424,55.49184458621365],[-1.5935111045837402,55.49174125772966],[-1.5935754776000977,55.491552834502244],[-1.5937042236328125,55.4914069578362],[-1.5939724445343018,55.491212454774455],[-1.5942513942718506,55.4911152028834],[-1.5946805477142334,55.491084811618215],[-1.595292091369629,55.4910604985892],[-1.595635414123535,55.49106657684784],[-1.5957105159759521,55.491121281133644],[-1.5959036350250244,55.49102402901751],[-1.5959250926971436,55.49093285494058],[-1.5960323810577393,55.49078697597856],[-1.5962040424346924,55.49052560815388],[-1.5962576866149902,55.49022168989803],[-1.5962469577789307,55.49010620034601],[-1.5961718559265137,55.48994208303175],[-1.5960967540740967,55.489765808117795],[-1.5959680080413818,55.48957737544101],[-1.5957856178283691,55.48941933443642],[-1.5954852104187012,55.489291685469844],[-1.5952062606811523,55.489255214260574],[-1.5951526165008545,55.48916403608966],[-1.5947985649108887,55.48930384253212],[-1.5947234630584717,55.489364627787104],[-1.5943479537963867,55.48943756996929],[-1.5939295291900633,55.48960776786919],[-1.5937042236328125,55.489711101949666],[-1.5934574604034424,55.48978404349032],[-1.5933179855346677,55.48978404349032],[-1.593436002731323,55.48990561242462],[-1.5932321548461914,55.49002110256471],[-1.593017578125,55.490094043531386],[-1.5929424762725828,55.49039796277202],[-1.5928030014038086,55.49066540976418],[-1.5927600860595703,55.49105442032959],[-1.5926849842071533,55.49143127065138],[-1.5926635265350342,55.491704788788255],[-1.5925991535186768,55.49185066435133],[-1.5929424762725828,55.49200869560172]]
+const parksData={
+  "type": "FeatureCollection",
+  "description": "Memorial Spaces",
+"features": [
+  {
+    "type": "Feature",
+      "properties": {myColor: HirParkCol, title: "Hiroshima Peace Memorial Park", description: "Established April 1, 1954." },
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            132.44857549667358,
+            34.39155926825359
+          ],
+          [
+            132.44961619377136,
+            34.391337932952965
+          ],
+          [
+            132.4494767189026,
+            34.39113430395948
+          ],
+          [
+            132.45237350463867,
+            34.39035519715012
+          ],
+          [
+            132.4524164199829,
+            34.39063850955618
+          ],
+          [
+            132.45418667793274,
+            34.390125005114164
+          ],
+          [
+            132.4547982215881,
+            34.39178060296896
+          ],
+          [
+            132.45494842529297,
+            34.393020066559295
+          ],
+          [
+            132.4549376964569,
+            34.39313515867569
+          ],
+          [
+            132.45399355888364,
+            34.39473757862432
+          ],
+          [
+            132.4544334411621,
+            34.39590617493213
+          ],
+          [
+            132.45321035385132,
+            34.396269144706565
+          ],
+          [
+            132.45315670967102,
+            34.396154056899746
+          ],
+          [
+            132.45176196098328,
+            34.39648161408796
+          ],
+          [
+            132.45028138160706,
+            34.39433918978991
+          ],
+          [
+            132.45008826255798,
+            34.393949652207155
+          ],
+          [
+            132.4498736858368,
+            34.393657497830326
+          ],
+          [
+            132.4494767189026,
+            34.3930731860173
+          ],
+          [
+            132.44857549667358,
+            34.39155926825359
+          ]
         ]
-      }
-    },
-    {
-      "type": "Feature",
-        "properties": {myColor: meadeCol, title: "Town of Hogsmeade", description: "Home of Butterbeer"},
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [[[-1.6042613983154297,55.490701879667895],[-1.6042077541351318,55.49065933144361],[-1.6042184829711914,55.49068364472025],[-1.604926586151123,55.49031894399501],[-1.607351303100586,55.49065933144361],[-1.6081881523132324,55.489923847732406],[-1.6085636615753174,55.48901815057725],[-1.6068792343139648,55.48843460312515],[-1.6042506694793701,55.487723392980776],[-1.6029417514801023,55.48743161074576],[-1.600785255432129,55.48822792799636],[-1.5991652011871336,55.48898167911473],[-1.599959135055542,55.490033259401876],[-1.5986931324005127,55.491479896236754],[-1.5987253189086914,55.49171694510582],[-1.5996050834655762,55.49194791442662],[-1.6010427474975586,55.49192360193031],[-1.6019654273986814,55.49204516426178],[-1.6025233268737793,55.491795961078495],[-1.6033065319061277,55.491340097517046],[-1.6042613983154297,55.490701879667895]]        ]
-      }
+      ]
     }
-  ]
-}
+  },
+  {
+    "type": "Feature",
+      "properties": {myColor: NagParkCol, title: "Nagasaki Peace Park: Wish Zone", description: "Established April 1, 1955. "},
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+          [
+            [
+              129.8624324798584,
+              32.77438008592417
+            ],
+            [
+              129.86309230327606,
+              32.77463267074292
+            ],
+            [
+              129.86321568489075,
+              32.77470934813534
+            ],
+            [
+              129.86341416835785,
+              32.77504311954437
+            ],
+            [
+              129.8636394739151,
+              32.77503409871193
+            ],
+            [
+              129.8636770248413,
+              32.775205494371775
+            ],
+            [
+              129.8637467622757,
+              32.77540846248942
+            ],
+            [
+              129.86393988132477,
+              32.775742231276325
+            ],
+            [
+              129.8640739917755,
+              32.77586852184223
+            ],
+            [
+              129.86401498317719,
+              32.776125612797536
+            ],
+            [
+              129.86443877220154,
+              32.77659017878043
+            ],
+            [
+              129.86464262008667,
+              32.77698257728426
+            ],
+            [
+              129.8645406961441,
+              32.77698257728426
+            ],
+            [
+              129.86376285552979,
+              32.77731182986616
+            ],
+            [
+              129.8632800579071,
+              32.776545075393244
+            ],
+            [
+              129.86273288726807,
+              32.77617973711454
+            ],
+            [
+              129.86293137073517,
+              32.77613914387987
+            ],
+            [
+              129.86283481121063,
+              32.776012853698056
+            ],
+            [
+              129.86275970935822,
+              32.77586852184223
+            ],
+            [
+              129.86272215843198,
+              32.77587303221626
+            ],
+            [
+              129.86262023448944,
+              32.775620450918055
+            ],
+            [
+              129.86250758171082,
+              32.77562947169106
+            ],
+            [
+              129.86243784427643,
+              32.77555730548148
+            ],
+            [
+              129.86243784427643,
+              32.7752866816744
+            ],
+            [
+              129.86251294612885,
+              32.77497095285928
+            ],
+            [
+              129.86249148845673,
+              32.77496193201954
+            ],
+            [
+              129.862539768219,
+              32.774731900297
+            ],
+            [
+              129.86236810684204,
+              32.7746822855338
+            ],
+            [
+              129.8624324798584,
+              32.77438008592417
+            ]
+          ]
+        ]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {myColor: NagParkCol, title: "Nagasaki Peace Park: Prayer Zone", description: "The hypocenter monument is surrounded by a design of rings expanding outwards."},
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            129.86355364322662,
+            32.774235751420164
+          ],
+          [
+            129.86256122589108,
+            32.77375764170362
+          ],
+          [
+            129.86289381980896,
+            32.7721067902952
+          ],
+          [
+            129.86306011676788,
+            32.7721744487416
+          ],
+          [
+            129.86323177814484,
+            32.772138364243254
+          ],
+          [
+            129.8632854223251,
+            32.77219700154563
+          ],
+          [
+            129.8632425069809,
+            32.77245861365479
+          ],
+          [
+            129.86327469348907,
+            32.77246312420164
+          ],
+          [
+            129.86325860023499,
+            32.772517250746155
+          ],
+          [
+            129.8633712530136,
+            32.77253078237714
+          ],
+          [
+            129.86341953277588,
+            32.77240899762421
+          ],
+          [
+            129.86374139785767,
+            32.77248116638681
+          ],
+          [
+            129.86402034759521,
+            32.772305254925456
+          ],
+          [
+            129.86406862735748,
+            32.773559180312155
+          ],
+          [
+            129.8636394739151,
+            32.773559180312155
+          ],
+          [
+            129.8636072874069,
+            32.773753131222364
+          ],
+          [
+            129.86351609230042,
+            32.774010228288994
+          ],
+          [
+            129.86355364322662,
+            32.774235751420164
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {myColor: NagParkCol, title: "Nagasaki Peace Park: Learning Zone", description: "To educate on the history of the atomic bombing of Nagsaki and the dangers of nuclear weapons."},
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            129.86411154270172,
+            32.77314421415447
+          ],
+          [
+            129.8640739917755,
+            32.772309765480095
+          ],
+          [
+            129.86429929733276,
+            32.771863219462325
+          ],
+          [
+            129.8646479845047,
+            32.77189930407222
+          ],
+          [
+            129.86550629138947,
+            32.771836155995324
+          ],
+          [
+            129.8653346300125,
+            32.773184808755275
+          ],
+          [
+            129.8647177219391,
+            32.77320285079414
+          ],
+          [
+            129.86462116241455,
+            32.77311715107697
+          ],
+          [
+            129.86411154270172,
+            32.77314421415447
+          ]
+        ]
+      ]
+    }
+  }
+]    
+};
+let parks = processJSONLayer(parksData)
 
-let towns = processJSONLayer(townsData)
 
 ////////////////////////////////////////////////////////
 // MAP DATA PART 3: DIRECT CREATION OF SHAPE OVERLAYS //
@@ -170,68 +527,170 @@ let towns = processJSONLayer(townsData)
 // Hogwarts Buildings Objects and LayerGroup
 // API docs: https://leafletjs.com/reference-1.5.0.html#polygon
 //  (keep scrolling for docs on rectangles and circles)
-let gryffindor = L.rectangle([[ 55.49021561150901, -1.5941441059112549],
-                              [55.49107265510559,-1.5931355953216553]], {
-    color: gryfCol,
-    opacity: 0.8,
-    weight: 2,
-    fillColor: gryfCol,
-    fillOpacity: 0.35,
-    title: 'Gryffindor',
-    windowContent: `<h3>Gryffindor</h3><p>The Good Guys Live here</p3>`
+
+let hiroshimahypo = L.circle([ 34.39464724174592, 132.45479192752794 ], {
+    color: 'rgb(155, 102, 102)',
+    opacity: 1,
+    weight: 3,
+    fillColor: HirCol,
+    fillOpacity: 0.10,
+    title: 'Hiroshima\'s Hypocenter',
+    windowContent: `<h3>Hiroshima\'s Hypocenter</h3><p>Location of impact.</p3>`
 });
 
-let slytherin = L.rectangle([[ 55.48954090449621, -1.5956997871398926], [55.490288552115494, -1.594712734222412]], {
-    color: 'blue',
-    opacity: 0.8,
-    weight: 2,
-    fillColor: slythCol,
-    fillOpacity: 0.35,
-    title: 'Slytherin',
-    windowContent: `<h3>Slytherin</h3><p>The Bad Guys Live here</p3>`
+let nagasakihypo = L.circle([ 32.77373031623168, 129.86322281575983 ], {
+  color: 'rgb(155, 102, 102)',
+  opacity: 1,
+  weight: 3,
+  fillColor: NagCol,
+  fillOpacity: 0.10,
+  title: 'Nagasaki\'s Hypocenter',
+  windowContent: `<h3>Nagasaki\'s Hypocenter</h3><p>Location of Impact.</p3>`
 });
 
-let headmasterTower = L.circle([55.4907, -1.5944], {
-    color: towerCol,
-    opacity: 0.8,
-    weight: 2,
-    fillColor: towerCol,
-    fillOpacity: 0.35,
-    radius: 40,
-    title: 'Headmaster\'s Tower',
-    windowContent: `<h3>Headmaster's Tower</h3><p>Scene of the the Fatal Act.</p>`
-});
 
-let houses = processManualLayers([gryffindor, slytherin, headmasterTower],
-                                 {description: 'Important Hogwarts Buildings'});
+//let motoyasu = L.polygon([34.39409572901314, 132.45341151952744],[34.39409572901314, 132.4534222483635],
+  //  [ 34.394100155579046, 132.4534222483635],[34.394100155579046, 132.45341151952744],[34.39409572901314, 132.45341151952744], {
+    //color: towerCol,
+   // opacity: 0.8,
+    //weight: 2,
+   // fillColor: towerCol,
+    //fillOpacity: 0.35,
+    //radius: 40,
+    //title: 'Motoyasu Bridge',
+   // windowContent: `<h3></p>`
+//});
+
+let hypocenters = processManualLayers([hiroshimahypo, nagasakihypo],
+                                 {description: 'Hypocenters'});
 
 
 
 
 // Polyline Objects and Layer Group ("paths")
-let vanishingPath = L.polyline([[51.37178037591737, -0.2197265625],
-                                [55.36857598381045, -1.7512893676757812],
-                                [55.48997247517858,-1.5944015979766843 ]], {
-                                    color: slythCol,
+let hirPath = L.polyline( [
+  [
+    34.391506147834804,
+    132.45197653770447
+  ],
+  [
+    34.391532708048416,
+    132.4531352519989
+  ],
+  [
+    34.39182486984179,
+    132.45211601257324
+  ],
+  [
+    34.39281644165799,
+    132.45251297950745
+  ],
+  [
+    34.39310859897056,
+    132.45319962501526
+  ],
+  [
+    34.39395850535416,
+    132.45309233665466
+  ],
+  [
+    34.39423295244714,
+    132.45402574539185
+  ],
+  [
+    34.39504743529558,
+    132.4537467956543
+  ]
+], {
+                                    color: 'blue',
                                     weight: 6,
-                                    title: 'DeathEaters Travel',
-                                    windowContent: `<h3>Line of Travel for Deatheaters</h3><p>From the twin Vanishing Cabinet, the Deatheraters can travel directly from Bourquin and Burkes</p>`})
+                                    title: 'Path along the Hiroshima Memorial',
+                                    windowContent: `<h3>A Possible Path</h3><p>Starting from the south of the park, moving towards the A-bomb Dome.</p>`})
 
 
-let tunnelPath = L.polyline([[55.49065933144361,-1.6042077541351318],
-                                [55.49027247517858,-1.5943015979766843 ]], {
-                                    color: gryfCol,
+let nagasakiPath = L.polyline([
+  [
+    32.77451990975169,
+    129.8624002933502
+  ],
+  [
+    32.77530472328714,
+    129.86299574375153
+  ],
+  [
+    32.77549416000011,
+    129.86288309097287
+  ],
+  [
+    32.77670293714836,
+    129.86377894878387
+  ],
+  [
+    32.7755257327464,
+    129.863623380661
+  ],
+  [
+    32.77587754259007,
+    129.86404716968536
+  ],
+  [
+    32.77578282469204,
+    129.86414909362793
+  ],
+  [
+    32.77536786890293,
+    129.86384332180023
+  ],
+  [
+    32.77457854548496,
+    129.86368238925934
+  ],
+  [
+    32.77448833664857,
+    129.86355900764465
+  ],
+  [
+    32.77379372554542,
+    129.86346781253815
+  ],
+  [
+    32.77365841106322,
+    129.86304938793182
+  ],
+  [
+    32.77288711458601,
+    129.86326932907104
+  ],
+  [
+    32.772760819789134,
+    129.86341953277588
+  ],
+  [
+    32.772733756595045,
+    129.86400425434113
+  ],
+  [
+    32.77274728819311,
+    129.86498057842255
+  ],
+  [
+    32.772097769165136,
+    129.8650074005127
+  ]
+]
+, {
+                                    color: 'blue',
                                     weight: 6,
-                                    title: 'Tunnel to Hogsmeade',
-                                    windowContent: `<h3>Marauders' Map Tunnel</h3><p>Not really sure why this worked in the first ocuple of books.</p>`})
+                                    title: 'Path along the Nagasaki Memorial',
+                                    windowContent: `<h3>A Possible Path</h3><p>Passing through the Wish Zone, Prayer Zone, and Learning Zone.</p>`})
 
-let horcruxPath = L.polyline([[55.49058639152367,-1.5951092937469482],
-                              [55.61679475360749,-1.6392910480499268]], {
-                                  color: gryfCol,
-                                  weight: 4,
-                                  title: 'Return from Horcrux quest',
-                                  windowContent: `<h3>Return Disapparation from Failed Horcrux quest</h3><p>Exhaisted and grieviously injured, Dumbledore returns to find the trap he had so long expected has been sprung.</p>`})
-let paths = processManualLayers([vanishingPath, tunnelPath, horcruxPath], {description: 'Paths'})
+//let horcruxPath = L.polyline([[55.49058639152367,-1.5951092937469482],
+                              //[55.61679475360749,-1.6392910480499268]], {
+                                  //color: NagCol,
+                                  //weight: 4,
+                                  //title: 'Return from Horcrux quest',
+                                  //windowContent: `<h3>Return Disapparation from Failed Horcrux quest</h3><p>Exhaisted and grieviously injured, Dumbledore returns to find the trap he had so long expected has been sprung.</p>`})
+let paths = processManualLayers([hirPath, nagasakiPath], {description: 'Paths'})
 
 
 ////////////////////////////////////////////////
@@ -239,7 +698,7 @@ let paths = processManualLayers([vanishingPath, tunnelPath, horcruxPath], {descr
 // these layers will be added to the map
 // you should change these variable names
 // to align with the variables you've defiend above
-let allLayers = [gryfMarkers, slythMarkers, towns, houses, paths];
+let allLayers = [nagasakiMarkers, hiroshimaMarkers, parks, hypocenters, paths];
 
 
 ///////////////////////////////////////
@@ -288,7 +747,7 @@ function createMap (element) {
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
 	attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
 	maxZoom: 18,
-        id: 'mapbox/dark-v10',
+        id: 'mapbox/satellite-v9',
         // id: 'titaniumbones/ckhnvk5pl18o71apeq8q1duhc',
         tileSize: 512,
         zoomOffset: -1,

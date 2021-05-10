@@ -14,7 +14,6 @@
     "servemap": "node node_modules/http-server/bin/http-server -o ./spatial-history",
     "servestory": "node node_modules/http-server/bin/http-server -o ./oral-history",
     "serveproposal": "node node_modules/http-server/bin/http-server -o ./project-proposal"
-
   },
   "author": "Matt Price",
   "license": "GPL-3.0",

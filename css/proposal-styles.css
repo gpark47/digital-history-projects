@@ -1,0 +1,49 @@
+
+.main-container {
+    grid-template-areas: "intro intro" "main main";
+    grid-auto-columns: 1fr;
+    grid-template-rows: 50vh 1fr;
+    overflow-y: scroll;
+}
+
+section#intro {
+    grid-area: intro;
+    border: 1px solid var(--color-custom-borders);
+    overflow-y: scroll;
+    background-color: rgb(247, 212, 117);
+}
+
+section.main{
+    grid-area: main;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom:20px;
+    background-color: rgb(136, 197, 255);
+}
+
+section#maintext {
+    grid-area: main;
+    background-color: rgb(220, 224, 255);
+    border: 1px solid var(--color-custom-borders);
+    overflow-y: auto;
+}
+
+img {
+    flex-wrap: wrap;
+    padding-bottom:10px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    float: center;
+  }
+
+a {
+    color: rgb(78, 108, 184);
+}
+
+.map {
+    display: wrap;
+    margin-left: auto;
+    margin-right: auto;
+}
