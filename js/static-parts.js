@@ -38,6 +38,7 @@ function makeMenu (items= menuEntries) {
 function makeFooter (html) {
   $('footer#page-footer').html(`<main>${html}</main>`);
 }
+ 
 
 makeMenu (menuEntries);
 makeFooter (footerHtml);
