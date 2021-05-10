@@ -3,13 +3,13 @@
 
 let menuEntries = [
   {text: "Home",
-   link: 'index.html'},
+   link: '/index.html'},
   {text: 'Oral History',
-   link: 'oral-history/index.html'},
+   link: '/oral-history/index.html'},
   {text: 'Mapping',
-   link: 'spatial-history/index.html'},
+   link: '/spatial-history/index.html'},
   {text: 'Proposal',
-   link: 'project-proposal/index.html'}
+   link: '/project-proposal/index.html'}
 ];
 
 
@@ -20,7 +20,7 @@ let authorName='Grace Park',
 function makeMenu (items= menuEntries) {
   let prefix = '',
       html = '',
-      basedir = 'https://gpark47.github.io/digital-history-projects/'
+      basedir = 'https://gpark47.github.io/digital-history-projects'
      // basedir = window.location.pathname.split(/\//g).splice(-2)[0]; // check which dir we're in
     // console.log("checking location");
     // console.log(basedir);
