@@ -20,7 +20,7 @@ let authorName='Grace Park',
 function makeMenu (items= menuEntries) {
   let prefix = 'gpark47.github.io',
       html = '',
-      basedir = 'gpark47.github.io'
+      basedir = ''
      // basedir = window.location.pathname.split(/\//g).splice(-2)[0]; // check which dir we're in
     // console.log("checking location");
     // console.log(basedir);
