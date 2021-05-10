@@ -29,11 +29,11 @@ function makeMenu (items= menuEntries) {
     prefix = '../';
   }
   //for (let i of items) {
-   // html += `<a href="${prefix}${i.link}">${i.text}</a>`;
+    //html += `<a href="${prefix}${i.link}">${i.text}</a>`;
   //}
-  //html = '<div class="nav-right">' + html + "</div>";
-  //$('header.nav').append(html);
-//}
+  html = '<div class="nav-right">' + html + "</div>";
+  $('header.nav').append(html);
+}
  
 function makeFooter (html) {
   $('footer#page-footer').html(`<main>${html}</main>`);
