@@ -3,13 +3,13 @@
 
 let menuEntries = [
   {text: "Home",
-   link: 'index.html'},
+   link: 'digital-history-projects/index.html'},
   {text: 'Oral History',
-   link: 'oral-history/index.html'},
+   link: 'digital-history-projects/oral-history/index.html'},
   {text: 'Mapping',
-   link: 'spatial-history/index.html'},
+   link: 'digital-history-projects/spatial-history/index.html'},
   {text: 'Proposal',
-   link: 'project-proposal/index.html'}
+   link: 'digital-history-projects/project-proposal/index.html'}
 ];
 
 
@@ -20,7 +20,7 @@ let authorName='Grace Park',
 function makeMenu (items= menuEntries) {
   let prefix = '',
       html = '',
-      basedir = 'gpark47.github.io/digital-history-projects/'
+      basedir = 'gpark47.github.io'
      // basedir = window.location.pathname.split(/\//g).splice(-2)[0]; // check which dir we're in
     // console.log("checking location");
     // console.log(basedir);
@@ -28,12 +28,12 @@ function makeMenu (items= menuEntries) {
     if (! (basedir === 'advanced-topics' || basedir === "")) {
     prefix = '../';
   }
-  for (let i of items) {
-    html += `<a href="${prefix}${i.link}">${i.text}</a>`;
-  }
-  html = '<div class="nav-right">' + html + "</div>";
-  $('header.nav').append(html);
-}
+  //for (let i of items) {
+   // html += `<a href="${prefix}${i.link}">${i.text}</a>`;
+  //}
+  //html = '<div class="nav-right">' + html + "</div>";
+  //$('header.nav').append(html);
+//}
  
 function makeFooter (html) {
   $('footer#page-footer').html(`<main>${html}</main>`);
